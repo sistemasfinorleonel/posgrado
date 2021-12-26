@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Docente;
+
+use App\Models\Curso;
 use Illuminate\Http\Request;
 
-class DocenteController extends Controller
+class CursoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class DocenteController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -40,10 +41,10 @@ class DocenteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Docente  $docente
+     * @param  \App\Models\Curso  $curso
      * @return \Illuminate\Http\Response
      */
-    public function show(Docente $docente)
+    public function show(Curso $curso)
     {
         //
     }
@@ -51,10 +52,10 @@ class DocenteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Docente  $docente
+     * @param  \App\Models\Curso  $curso
      * @return \Illuminate\Http\Response
      */
-    public function edit(Docente $docente)
+    public function edit(Curso $curso)
     {
         //
     }
@@ -63,10 +64,10 @@ class DocenteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Docente  $docente
+     * @param  \App\Models\Curso  $curso
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Docente $docente)
+    public function update(Request $request, Curso $curso)
     {
         //
     }
@@ -74,10 +75,10 @@ class DocenteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Docente  $docente
+     * @param  \App\Models\Curso  $curso
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Docente $docente)
+    public function destroy(Curso $curso)
     {
         //
     }
