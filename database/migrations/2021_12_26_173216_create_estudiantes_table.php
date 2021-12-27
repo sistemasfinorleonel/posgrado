@@ -22,7 +22,7 @@ class CreateEstudiantesTable extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->unsignedBigInteger('requisito_id');
-            $table->foreign('requisito_id')->reference('id')->on('requisitos')->onDelete('cascade');
+            $table->foreign('requisito_id')->references('id')->on('requisitos')->onDelete('cascade');
             $table->timestamps();
         });
     }

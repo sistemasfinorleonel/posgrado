@@ -18,8 +18,8 @@ class CreateProgramaModulosTable extends Migration
             $table->unsignedBigInteger('programa_id')->constrained();
             $table->unsignedBigInteger('modulo_id')->constrained();
             $table->primary(['programa_id','modulo_id']);
-            $table->foreign('programa_id')->reference('id')->on('programas')->onDelete('cascade');
-            $table->foreign('modulo_id')->reference('id')->on('modulos')->onDelete('cascade');
+            $table->foreign('programa_id')->references('id')->on('programas')->onUpdate('restrict')->onDelete('cascade');
+            $table->foreign('modulo_id')->references('id')->on('modulos')->onUpdate('restrict')->onDelete('cascade');
             $table->timestamps();
         });
     }
