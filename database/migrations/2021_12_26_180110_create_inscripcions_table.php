@@ -17,8 +17,8 @@ class CreateInscripcionsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('estudiante_id');
             $table->unsignedBigInteger('programa_id');
-            $table->foreign('estudiante_id')->reference('id')->on('estudiantes')->onDelete('cascade');
-            $table->foreign('programa_id')->reference('id')->on('programas')->onDelete('cascade');
+            $table->foreign('estudiante_id')->references('id')->on('estudiantes')->onDelete('cascade');
+            $table->foreign('programa_id')->references('id')->on('programas')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -21,7 +21,7 @@ class CreateEstudioSuperiorsTable extends Migration
             $table->date('fechaResolucion');
             $table->string('pais');
             $table->unsignedBigInteger('docente_id');
-            $table->foreign('docente_id')->reference('id')->on('docentes')->onDelete('cascade');
+            $table->foreign('docente_id')->references('id')->on('docentes')->onDelete('cascade');
             $table->timestamps();
         });
     }

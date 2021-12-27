@@ -20,7 +20,7 @@ class CreateExperienciaLaboralsTable extends Migration
             $table->date('fechaInicial');
             $table->date('fechaFinal');
             $table->unsignedBigInteger('docente_id');
-            $table->foreign('docente_id')->reference('id')->on('docentes')->onDelete('cascade');
+            $table->foreign('docente_id')->references('id')->on('docentes')->onDelete('cascade');
             
             $table->timestamps();
         });

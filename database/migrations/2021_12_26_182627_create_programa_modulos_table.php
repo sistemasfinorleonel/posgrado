@@ -14,9 +14,10 @@ class CreateProgramaModulosTable extends Migration
     public function up()
     {
         Schema::create('programa_modulos', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('programa_id');
-            $table->unsignedBigInteger('modulo_id');
+          
+            $table->unsignedBigInteger('programa_id')->constrained();
+            $table->unsignedBigInteger('modulo_id')->constrained();
+            $table->primary(['programa_id','modulo_id']);
             $table->foreign('programa_id')->reference('id')->on('programas')->onDelete('cascade');
             $table->foreign('modulo_id')->reference('id')->on('modulos')->onDelete('cascade');
             $table->timestamps();

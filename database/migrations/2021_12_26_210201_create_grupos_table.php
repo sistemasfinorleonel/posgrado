@@ -18,7 +18,7 @@ class CreateGruposTable extends Migration
             $table->unsignedBigInteger('docente_id');
             $table->unsignedBigInteger('programa_id');
             $table->unsignedBigInteger('modulo_id');
-            $table->reference('programa_id', 'modulo_id')->reference('id')->on('programa_modulos')->onDelete('cascade');
+            $table->reference(['programa_id', 'modulo_id'])->references(['programa_id', 'modulo_id'])->on('programa_modulos')->onDelete('cascade');
 
             $table->foreign('docente_id')->references('id')->on('docentes')->onDelete('cascade');
             $table->timestamps();
