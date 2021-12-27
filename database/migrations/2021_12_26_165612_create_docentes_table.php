@@ -22,7 +22,7 @@ class CreateDocentesTable extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('email');
-            $table->date('fecha_nacimiento');
+            $table->string('fecha_nacimiento');
             $table->string('lugar_nacimiento');
             $table->timestamps();
         });
