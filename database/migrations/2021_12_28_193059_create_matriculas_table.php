@@ -14,11 +14,11 @@ class CreateMatriculasTable extends Migration
     public function up()
     {
         Schema::create('matriculas', function (Blueprint $table) {
-            $table->string('nombre');
-            $table->integer('precio');
             $table->unsignedBigInteger('programa_id');
             $table->unsignedBigInteger('matricula_id');
             $table->primary(['programa_id','matricula_id']);
+            $table->string('nombre');
+            $table->integer('precio');
             $table->foreign('programa_id')->references('id')->on('programas')->onDelete('cascade');
             $table->timestamps();
         });

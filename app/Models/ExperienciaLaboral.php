@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ExperienciaLaboral extends Model
 {
     
-    protected $guarded =['id'];
+   
 
     use HasFactory;
-    public function docente(){
+    protected $guarded =['id'];
+    public function docentes(){
         return $this->belongsTo('App\Models\Docente');
           }
 }

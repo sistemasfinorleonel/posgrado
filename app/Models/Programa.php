@@ -18,5 +18,7 @@ class Programa extends Model
             return $this->belongsToMany('App\Models\Estudiante');
             }
     
-
+    public function image(){
+        return $this->morphTo('App\Models\Image','imageable');
+    }
 }

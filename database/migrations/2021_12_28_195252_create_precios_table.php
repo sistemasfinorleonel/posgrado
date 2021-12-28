@@ -14,12 +14,11 @@ class CreatePreciosTable extends Migration
     public function up()
     {
         Schema::create('precios', function (Blueprint $table) {
-            
-            $table->string('tutordefensa');
-            $table->integer('precioPrograma');
             $table->unsignedBigInteger('programa_id');
             $table->unsignedBigInteger('precio_id');
-            $table->primary(['programa_id','precio_id']);
+            $table->primary(['programa_id','precio_id']); 
+            $table->string('tutordefensa');
+            $table->integer('precioPrograma');
             $table->foreign('programa_id')->references('id')->on('programas')->onDelete('cascade');
             $table->timestamps();
         });

@@ -14,15 +14,12 @@ class CreatePagoDefenzasTable extends Migration
     public function up()
     {
         Schema::create('pago_defenzas', function (Blueprint $table) {
-            
-            $table->string('nombre');
-            $table->integer('monto');
-            
             $table->unsignedBigInteger('programa_id');
             $table->unsignedBigInteger('pago_defenza_id');
             $table->primary(['programa_id','pago_defenza_id']);
+            $table->string('nombre');
+            $table->integer('monto');
             $table->foreign('programa_id')->references('id')->on('programas')->onDelete('cascade');
-          
             $table->timestamps();
         });
     }

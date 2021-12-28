@@ -10,7 +10,7 @@ class Curso extends Model
     use HasFactory;
     protected $guarded =['id'];
 
-    public function docente(){
+    public function docentes(){
         return $this->belongsTo('App\Models\Docente');
           }
 }
