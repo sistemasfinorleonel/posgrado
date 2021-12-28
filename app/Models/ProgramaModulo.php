@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EstudioSuperior extends Model
+class ProgramaModulo extends Model
 {
     use HasFactory;
-    public function docente(){
-      return $this->belongsTo('App\Models\Docente');
-        }
-  }
+    public function  grupos(){ 
+       return $this->hasMany('App\Models\Grupo');
+}
+}
+
