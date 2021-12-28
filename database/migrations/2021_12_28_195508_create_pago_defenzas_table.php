@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePagodefensasTable extends Migration
+class CreatePagoDefenzasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,16 @@ class CreatePagodefensasTable extends Migration
      */
     public function up()
     {
-        Schema::create('pagodefensas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('pago_defenzas', function (Blueprint $table) {
+            
             $table->string('nombre');
             $table->integer('monto');
+            
+            $table->unsignedBigInteger('programa_id');
+            $table->unsignedBigInteger('pago_defenza_id');
+            $table->primary(['programa_id','pago_defenza_id']);
+            $table->foreign('programa_id')->references('id')->on('programas')->onDelete('cascade');
+          
             $table->timestamps();
         });
     }
@@ -28,6 +34,6 @@ class CreatePagodefensasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pagodefensas');
+        Schema::dropIfExists('pago_defenzas');
     }
 }
