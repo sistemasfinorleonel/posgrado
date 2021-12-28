@@ -14,10 +14,11 @@ class CreateGrupoHorarioTable extends Migration
     public function up()
     {
         Schema::create('_grupo_horario', function (Blueprint $table) {
-            $table->id();
+            
             $table->string('aula');
-            $table->unsignedBigInteger('grupo_id');
-            $table->unsignedBigInteger('horario_id');
+            $table->unsignedBigInteger('grupo_id')->constrained();
+            $table->unsignedBigInteger('horario_id')->constrained();
+            $table->primary(['grupo_id','horario_id']);
             $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('cascade');
             $table->foreign('horario_id')->references('id')->on('horarios')->onDelete('cascade');
             $table->timestamps();

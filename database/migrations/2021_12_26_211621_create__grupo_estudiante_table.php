@@ -14,10 +14,11 @@ class CreateGrupoEstudianteTable extends Migration
     public function up()
     {
         Schema::create('_grupo_estudiante', function (Blueprint $table) {
-            $table->id();
+          
             $table->integer('nota');
-            $table->unsignedBigInteger('grupo_id');
-            $table->unsignedBigInteger('estudiante_id');
+
+            $table->unsignedBigInteger('grupo_id')->constrained();
+            $table->unsignedBigInteger('estudiante_id')->constrained();
             $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('cascade');
             $table->foreign('estudiante_id')->references('id')->on('estudiantes')->onDelete('cascade');
             $table->timestamps();

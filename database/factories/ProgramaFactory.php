@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class DocenteSeederFactory extends Factory
+class ProgramaFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,8 +14,7 @@ class DocenteSeederFactory extends Factory
     public function definition()
     {
         return [
-        
-            
+            //
         ];
     }
 }
