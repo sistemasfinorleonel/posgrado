@@ -9,6 +9,6 @@ class EstudioSuperior extends Model
 {
     use HasFactory;
     public function docente(){
-      return $this->belongsTo('App\Models\Docente');
-        }
-  }
+        return $this->belongsTo('App\Models\Docente');
+          }
+}
