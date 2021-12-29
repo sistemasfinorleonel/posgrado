@@ -13,3 +13,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+app/Models/EstudioSuperior.php
+app/Models/EstudioSuperior.php
+app/Models/Experiencialaboral.php
