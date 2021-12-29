@@ -8,7 +8,8 @@ use App\Models\Programa;
 class HomeController extends Controller
 {
     public function __invoke(){
-        $programa = Programa::all();
+
+        $programa = Programa::all()->take(12);
         
         return view('welcome', compact('programa'));
     }
