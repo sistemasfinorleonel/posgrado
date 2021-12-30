@@ -88,6 +88,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             @foreach ($programa as $programa)
                 <article class="bg-white shadow-lg rounded overflow-hidden">
+                   <img  class="h-36 w-full object-cover" git src="{{Storage::url($programa->image->url)}}" alt=""> 
                     {{-- <img class="h-36 w-full object-cover" src="{{Storage::url($programa->images->url)}}" alt=""> --}}
                     <div class="px-6 py-4">
                         <h1 class="text-xl text-gray-700 mb-2 leading-6">{{Str::limit($programa->nombre,40)}}</h1>

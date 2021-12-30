@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Image;
 use App\Models\Programa;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Database\Seeder;
 
 class ProgramaSeeder extends Seeder
@@ -14,6 +16,13 @@ class ProgramaSeeder extends Seeder
      */
     public function run()
     {
-        Programa::factory(10)->create();
-        }
+       $programas= Programa::factory(20)->create();
+        foreach ($programas as $programa) {
+            Image::factory(1)->create([
+                'imageable_id'=>$programa->id,
+                'imageable_type'=>'App\Models\Programa'
+            ]);
+        }    
+    
+    }
 }

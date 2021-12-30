@@ -14,7 +14,7 @@ class ProgramaFactory extends Factory
     public function definition()
     {
         return [
-            'nombre'=>$this->faker->firstName(),
+            'nombre'=>$this->faker->sentence(),
             'tipo'=>$this->faker->randomElement(['MAESTRIA','DIPLOMADO','DOCTORADO','ESPECIALIDAD']),
             'version'=>$this->faker->text(),
             'duracionMeses'=> $this->faker->numerify(),

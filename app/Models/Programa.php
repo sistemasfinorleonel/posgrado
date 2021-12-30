@@ -19,6 +19,10 @@ class Programa extends Model
             }
     
     public function image(){
-        return $this->morphTo('App\Models\Image','imageable');
+        return $this->morphOne('App\Models\Image','imageable');
     }
+
+
+    
+
 }
