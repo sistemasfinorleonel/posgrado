@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        Storage::deleteDirectory('programas');
+        Storage::deleteDirectory('public/programas');
         
-         Storage::makeDirectory('programas');
+         Storage::makeDirectory('public/programas');
         $this->call(UserSeeder::class);
         $this->call(DocenteSeeder::class);
         $this->call(CursoSeeder::class);
