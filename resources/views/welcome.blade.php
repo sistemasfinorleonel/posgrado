@@ -1,5 +1,5 @@
 <x-app-layout>
-    
+   {{--  PORTADA --}}
     <section class="bg-cover" style="background-image: url({{asset('img/home/people-2557399_1920.jpg')}})">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
             <div class="w-full md:w-3/4 lg:w-1/2">
@@ -24,7 +24,7 @@
     <section class="mt-24">
         
         <h1 class="text-gray text-center text-3xl mb-6"> CONTENIDO</h1>
-
+    
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             <article>
                 <figure>
@@ -75,7 +75,7 @@
         <p class="text-center text-white">Dirigete a nuestro sector de los programas ofertados por la UAGRM</p>
 
         <div class="flex justify-center mt-4">
-            <a href="{{route('programa.index')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <a href="{{route('programas.index')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Catalogo de programas
             </a>
         </div>
@@ -111,7 +111,7 @@
                                 <i class="fas fa-star"></i>
                             </li>
                         </ul>
-                        <a href="{{route('programa.show',$programa)}}" class="block text center w-full mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute right-0 top-0 mt-2">
+                        <a href="{{route('programas.show',$programa)}}" class="block text center w-full mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute right-0 top-0 mt-2">
                             Mas informacion
                         </a>
 

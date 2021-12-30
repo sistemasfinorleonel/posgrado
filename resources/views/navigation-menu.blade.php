@@ -4,7 +4,12 @@
             'route' => route('home'),
             'active' => request()->routeIs('home')
         ],
+        [
+            'name'=>'Programas',
+            'route'=>route('programas.index'),
+            'active' => request()->routeIs('programas.index'),
 
+        ]
     ];
 @endphp
 

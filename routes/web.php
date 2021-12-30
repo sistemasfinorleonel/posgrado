@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProgramaController;
+use App\Models\Programa;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,10 +22,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('programas', function () {
-    return "Aqui se mostrara la lista de programas";
-})->name('programa.index');
+Route::get('programas',[ProgramaController::class,'index'])->name('programas.index');
 
 Route::get('programas/{programa}', function ($programa){
     return "Aqui se mostrara la informacion del curso";
-})->name('programa.show');
+})->name('programas.show');

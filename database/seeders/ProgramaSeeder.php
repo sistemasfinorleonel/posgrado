@@ -16,7 +16,7 @@ class ProgramaSeeder extends Seeder
      */
     public function run()
     {
-       $programas= Programa::factory(20)->create();
+       $programas= Programa::factory(40)->create();
         foreach ($programas as $programa) {
             Image::factory(1)->create([
                 'imageable_id'=>$programa->id,
