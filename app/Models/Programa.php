@@ -22,7 +22,15 @@ class Programa extends Model
         return $this->morphOne('App\Models\Image','imageable');
     }
 
+    public function tipoprograma(){
+        return $this->belongsTo('App\Models\TipoPrograma');
+          }
 
-    
+          public function scopeTipo($query,$category_id)
+          {
+              if ($category_id) {
+                return $query->where('tipo_id',$category_id);
+              }
+          }
 
 }

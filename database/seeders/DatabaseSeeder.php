@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Curso;
 use App\Models\Docente;
 use App\Models\Programa;
+use App\Models\TipoPrograma;
+use Database\Seeders\TipoProgramaSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,10 +23,12 @@ class DatabaseSeeder extends Seeder
         Storage::deleteDirectory('public/programas');
         
          Storage::makeDirectory('public/programas');
-        $this->call(UserSeeder::class);
+       $this->call(TipoProgramaSeeder::class);
+         $this->call(UserSeeder::class);
         $this->call(DocenteSeeder::class);
         $this->call(CursoSeeder::class);
-       $this->call(ProgramaSeeder::class);
-    //    $this->call(ProgramaSeeder::class); 
+  
+        $this->call(ProgramaSeeder::class);
+       // $this->call(ProgramaSeeder::class); 
     }
 }

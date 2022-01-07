@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProgramasTable extends Migration
+class CreateTipoProgramasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,9 @@ class CreateProgramasTable extends Migration
      */
     public function up()
     {
-        Schema::create('programas', function (Blueprint $table) {
+        Schema::create('tipo_programas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('version');
-            $table->integer('duracionMeses');
-            $table->integer('totalModulos');
-            $table->unsignedBigInteger('tipo_id')->contraint();
-            $table->foreign('tipo_id')->references('id')->on('tipo_programas')->onDelete('cascade');        
- 
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ class CreateProgramasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('programas');
+        Schema::dropIfExists('tipo_programas');
     }
 }

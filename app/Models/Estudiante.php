@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Estudiante extends Model
 {
     use HasFactory;
-
+    protected $guarded =['id'];
     public function grupos(){
         return $this->belongsToMany('App\Models\Grupo');
     }
