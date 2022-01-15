@@ -9,6 +9,7 @@ class Modulo extends Model
 {
     use HasFactory;
     protected $guarded =['id'];
+    
     public function programa(){
     return $this->belongsToMany('App\Models\Programa');
     }

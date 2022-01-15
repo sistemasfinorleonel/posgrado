@@ -24,6 +24,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('programas',[ProgramaController::class,'index'])->name('programas.index');
 
-Route::get('programas/{programa}', function ($programa){
-    return "Aqui se mostrara la informacion del curso";
-})->name('programas.show');
+Route::get('programas/{programa}', [ProgramaController::class, 'show'])->name('programas.show');

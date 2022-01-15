@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProgramaModulo extends Model
 {
     use HasFactory;
+    
     public function  grupos(){ 
        return $this->hasMany('App\Models\Grupo');
 }
