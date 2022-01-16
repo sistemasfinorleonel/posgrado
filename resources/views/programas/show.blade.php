@@ -18,12 +18,37 @@
         <div class="col-span-2">
             <section class="card">
                 <div class="card-body">
-                    <h1 class="font-bold text-2xl mb-2"> Lo que aprenderás</h1>
-                    {{-- <ul>
-                        @foreach($programa->modulos as $modulo)
-                        <li>{{$modulo->pivot->nombre}}</li>
+                    <h1 class="font-fold text-3xl mb-2"> LOS MODULOS A CURSAR</h1>
+                  
+                     <ul>
+                        {{-- 
+                        @foreach ($programa->modulos as $modulo)
+
+                        $modulo->nombre    
+                        @endforeach                        
+                        --}}
+                         @foreach($modulosprogramas as $modulosprograma)
+                        @php
+                        $ind=$modulosprograma->modulo_id;
+                        @endphp
+                           
+                        @foreach ($modulos as $modulo)
+                        @if ($ind==$modulo->id)
+                        <article class="mb-4 shadow">
+                            <header class="border border-gray-200 px-4 py-2">
+                                <h1 class="font-bold text-lg text-gray-600">
+    
+                                    {{$modulo->nombre}}  
+                                </h1>
+                            </header>
+
+                        </article>
+                    
+                        @endif    
+                        
                         @endforeach
-                    </ul> --}}
+                        @endforeach
+                    </ul> 
 
                    
 

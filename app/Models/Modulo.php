@@ -8,9 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Modulo extends Model
 {
     use HasFactory;
-    protected $guarded =['id'];
-    
-    public function programa(){
-    return $this->belongsToMany('App\Models\Programa');
+   // protected $guarded =['id'];
+    protected $fillable = [
+        'nombre', 'credito',
+         'horasAcademica', 'horasInvestigacion', 
+         'subPrograma'
+    ];
+    public function programas(){
+    return $this->belongsToMany(Programa::class);
     }
 }

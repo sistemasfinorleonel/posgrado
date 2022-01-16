@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProgramaModulo extends Model
 {
     use HasFactory;
-    
+    protected $guarded =['id'];
     public function  grupos(){ 
        return $this->hasMany('App\Models\Grupo');
 }
