@@ -17,19 +17,23 @@ class ProgramaController extends Controller
 
   public function show(Programa $programa){
     //return $category = ProgramaModulo::where('6','programa_id')->get();
-    
+   
   //  $varrr =DB::select('select modulo_id from programa_modulos where programa_id = 6');
    $modulos=Modulo::all();
-   $modulosprogramas=DB::table('programa_modulos')->select('modulo_id')->where('programa_id','=',$programa->id)->get();
+   $modulosprogramas=DB::table('programa_modulos')
+   ->select('modulo_id')->where('programa_id','=',$programa->id)->get();
+ $pro=Programa::join('programa_modulos','programas.id','=','programa_modulos.programa_id')->where('programa_id','=',$programa->id)->get();
+  
   //return $varrr->get();
   //  return $m=Modulo::where(['modulo_id','=',$var])->get();
   // return $category->programasmodulos();
    //return json_encode($category);
    // return $programa->modulos->id;
+   //ss
    
     //return $programa_modulos=ProgramaModulo::where(6,'programa_id')->get();
    
-    return view('programas.show', compact('programa','modulos','modulosprogramas') );
+    return view('programas.show', compact('programa','modulos','modulosprogramas','pro') );
   }
 
 }

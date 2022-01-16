@@ -32,25 +32,24 @@
                         $ind=$modulosprograma->modulo_id;
                         @endphp
                            
-                        @foreach ($modulos as $modulo)
-                        @if ($ind==$modulo->id)
-                        <article class="mb-4 shadow">
-                            <header class="border border-gray-200 px-4 py-2">
-                                <h1 class="font-bold text-lg text-gray-600">
-    
-                                    {{$modulo->nombre}}  
-                                </h1>
-                            </header>
-
-                        </article>
-                    
-                        @endif    
-                        
-                        @endforeach
                         @endforeach
                     </ul> 
 
                    
+                    @foreach ($pro as $pr)
+                   
+                    <article class="mb-4 shadow">
+                        <header class="border border-gray-200 px-4 py-2">
+                            <h1 class="font-bold text-lg text-gray-600">
+
+                                {{$pr->nombre}}  
+                            </h1>
+                        </header>
+
+                    </article>
+                
+                    
+                    @endforeach
 
 
                 </div>

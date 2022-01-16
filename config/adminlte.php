@@ -269,6 +269,23 @@ return [
             'active'    => ['admin/users*']
             
         ],
+        
+        
+        [
+            'text'        => 'Docentes',
+            'route'         => 'admin.docentes.index',
+            'icon'        => 'fas fa-fw fa-user',
+            'active'    => ['admin/docentes*']
+            
+        ],
+        
+        [
+            'text'        => 'Estudiantes',
+            'route'         => 'admin.estudiantes.index',
+            'icon'        => 'fas fa-fw fa-user',
+            'active'    => ['admin/estudiantes*']
+            
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

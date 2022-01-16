@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Docente;
+
+use App\Models\Estudiante;
 use Illuminate\Http\Request;
 
-class DocenteController extends Controller
+class EstudianteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,18 +14,20 @@ class DocenteController extends Controller
      */
     public function index()
     {
-        $docentes=Docente::paginate(12);
+        $docentes=Estudiante::paginate(12);
         return view('admin.docentes.index',compact('docentes'));
+    
     }
 
-    /**`q                                     
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-    return view('admin.docentes.create');    
+        return view('admin.estudiantes.create');    
+        //
     }
 
     /**
@@ -35,57 +38,58 @@ class DocenteController extends Controller
      */
     public function store(Request $request)
     {
-        $datosdocente= request()->except('_token');
+        $datosestudiante= request()->except('_token');
   
-        Docente::insert($datosdocente);
-        return redirect()->route('admin.docentes.index');        
+        Estudiante::insert($datosestudiante);
+        return redirect()->route('admin.docentes.index');   
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Docente  $docente
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Docente $docente)
+    public function show(Estudiante $estudiante)
     {
-        //
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Docente  $docente
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Docente $docente)
-    { 
-        return view('admin.docentes.edit',compact('docente'));
+    public function edit(Estudiante $estudiante)
+    {
+        return view('admin.estudiantes.edit',compact('estudiante'));
+    
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Docente  $docente
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Docente $docente)
-    { $datosdocente= request()->except(['_token','_method']);
-        Docente::where('id','=',$docente->id)->update($datosdocente);
+    public function update(Request $request, Estudiante $estudiante)
+    {
+        $datosestudiante= request()->except(['_token','_method']);
+        Estudiante::where('id','=',$estudiante->id)->update($datosestudiante);
         return redirect()->route('admin.docentes.index');
-        
-    }
+        }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Docente  $docente
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Docente $docente)
+    public function destroy(Estudiante $estudiante)
     {
-        $docente->delete();
+        $estudiante->delete();
         return redirect()->route('admin.docentes.index');
     }
 }

@@ -22,7 +22,7 @@ class DocenteFactory extends Factory
             'nombre'=>$this->faker->name(),
             'paterno'=>$this->faker->name(),
             'materno'=>$this->faker->name(),
-            'telefono'=>$this->faker->text(),
+            'telefono'=>$this->faker->numerify(),
             'direccion'=>$this->faker->name(),
             'email'=>$this->faker->unique()->safeEmail(),
             'fecha_nacimiento'=>$this->faker->randomElement(['05/08/2000','15/09/1998','12/02/1995','23/05/1990']),
