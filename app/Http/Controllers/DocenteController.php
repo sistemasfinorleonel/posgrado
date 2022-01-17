@@ -49,7 +49,7 @@ class DocenteController extends Controller
      */
     public function show(Docente $docente)
     {
-        //
+    return view('admin.docentes.show',compact('docente'));    
     }
 
     /**

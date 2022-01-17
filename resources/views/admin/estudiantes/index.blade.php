@@ -11,7 +11,7 @@ $pcolor = "";
 <div class="card">
     <div class="card-body">
            <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('admin.estudiantes.create')}}"> agregar estudiante</a>            
+               <a class ="btn btn-primary"href="{{route('admin.estudiantes.create')}}"> agregar estudiantes</a>            
             </div> 
             <div class="card-body">  
                 <table id ="estudiante"class= "table table-striped" style="width:100%"> 

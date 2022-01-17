@@ -3,11 +3,11 @@
 
 @section('title', 'Dashboard')
 
+@section('content_header')
+    <h1>Postgrado</h1>
+@stop
 
 @section('content')
-@php
-$pcolor = "";
-@endphp
 <div class="card">
     <div class="card-body">
            <div class="card-header">
@@ -20,16 +20,14 @@ $pcolor = "";
                         
                             <th>id</th>
                             <th>ci</th>
-                            <th>nombre</th>            
-                            <th>paterno</th>            
-                            <th>materno</th>             
+                            <th>nombre completo</th>            
                             <th>telefono</th>            
-                            <th>direccion</th> 
                              <th>email</th>              
                             <th>Fecha de Nacimiento</th>     
-                            <th>Lugar de Nacimiento</th>      
+                            
                              
                           {{--   <th>usuario</th>    --}}
+                            <th ></th>
                             <th ></th>
                             <th ></th>
                         </tr>
@@ -40,21 +38,26 @@ $pcolor = "";
                             <tr>
                                     <td>{{$docente->id}}</td>
                                     <td>{{$docente->ci}}</td>
-                                    <td>{{$docente->nombre}}</td>
-                                    <td>{{$docente->paterno}}</td>
-                                    <td>{{$docente->materno}}</td>
+                                    <td>{{$docente->nombre}} {{$docente->paterno}} {{$docente->materno}} </td>
                                     <td>{{$docente->telefono}}</td>
-                                    <td>{{$docente->direccion}}</td>
+                                 
                                     <td>{{$docente->email}}</td>
                                     <td>{{$docente->fecha_nacimiento}}</td>
-                                    <td>{{$docente->lugar_nacimiento}}</td>
+                                   
                                   
                                    {{--  <td>{{$docente->user->name}}</td> --}}
                                      
                                     <td>
                                         <a class ="btn btn-primary btn-sm"href="{{route('admin.docentes.edit',$docente)}}">editar</a>
                                     </td>  
-                        
+                                    <td>
+                           {{--              <a class ="btn btn-primary btn-sm" href="{{asset('admin/docentes')}}/{{$docente}}">
+                                            Mas informacion
+                                        </a> --}}
+                                        <a class ="btn btn-primary btn-sm" href="{{route('admin.docentes.show',$docente)}}">
+                                            Mas informacion
+                                        </a>
+                                    </td>
                                     <td >
                                         <form action="{{route('admin.docentes.destroy',$docente)}}" method="post">
                                         @csrf

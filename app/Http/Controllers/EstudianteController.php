@@ -14,8 +14,8 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        $docentes=Estudiante::paginate(12);
-        return view('admin.docentes.index',compact('docentes'));
+        $estudiantes=Estudiante::paginate(12);
+        return view('admin.estudiantes.index',compact('estudiantes'));
     
     }
 
@@ -41,7 +41,7 @@ class EstudianteController extends Controller
         $datosestudiante= request()->except('_token');
   
         Estudiante::insert($datosestudiante);
-        return redirect()->route('admin.docentes.index');   
+        return redirect()->route('admin.estudiantes.index');   
     }
 
     /**
@@ -78,7 +78,7 @@ class EstudianteController extends Controller
     {
         $datosestudiante= request()->except(['_token','_method']);
         Estudiante::where('id','=',$estudiante->id)->update($datosestudiante);
-        return redirect()->route('admin.docentes.index');
+        return redirect()->route('admin.estudiantes.index');
         }
 
     /**
@@ -90,6 +90,6 @@ class EstudianteController extends Controller
     public function destroy(Estudiante $estudiante)
     {
         $estudiante->delete();
-        return redirect()->route('admin.docentes.index');
+        return redirect()->route('admin.estudiantes.index');
     }
 }
