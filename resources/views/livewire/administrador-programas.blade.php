@@ -2,7 +2,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
     <x-table-responsive>
                 <div class="px-6 py-4">
-                   <input class="form-input w-full shadow-sm" placeholder="INGRESE EL NOMBRE DEL CURSO">
+                   <input wire:model="search" class="form-input w-full shadow-sm" placeholder="INGRESE EL NOMBRE DEL CURSO">
                 </div>
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
