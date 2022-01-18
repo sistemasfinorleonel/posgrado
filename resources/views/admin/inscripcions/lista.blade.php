@@ -9,24 +9,19 @@
 
 @section('content')
 <div class="card">
-    <div class="card-body">
+    <div class="card-body"> 
            <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('admin.inscripcions.inscripcion')}}"> agregar inscripcion</a>            
+               <a class ="btn btn-primary"href="{{route('admin.inscripcions.create')}}"> agregar inscripcion</a>            
             </div> 
             <div class="card-body">  
                 <table id ="inscripcion"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
-                            <th>id</th>
-                            <th>ci</th>
-                            <th>nombre completo</th>            
-                            <th>telefono</th>            
-                             <th>email</th>              
-                            <th>Fecha de Nacimiento</th>     
-                            
-                             
-                     
+                            <th>N Registro</th>
+                            <th>Nombre completo </th>
+                            <th>Programa</th>            
+                            <th>tipo de programa</th>                         
                             <th ></th>
                             <th ></th>
                             <th ></th>
@@ -34,15 +29,15 @@
                     </thead>
                     
                     <tbody>
-                        @foreach ($inscripcions as $inscripcion)
+                        @foreach ($listaincripcions as $inscripcion)
                             <tr>
-                                    <td>{{$inscripcion->id}}</td>
-                                    <td>{{$inscripcion->ci}}</td>
-                                    <td>{{$inscripcion->nombre}} {{$inscripcion->paterno}} {{$inscripcion->materno}} </td>
-                                    <td>{{$inscripcion->telefono}}</td>
-                                 
-                                    <td>{{$inscripcion->email}}</td>
-                                    <td>{{$inscripcion->fecha_nacimiento}}</td>
+                                <td> {{$inscripcion->Nregistro}}</td>
+                                <td> {{$inscripcion->nombre_estudiante}} {{$inscripcion->paterno}}</td>
+                                <td>{{$inscripcion->nombre_programa}}</td>
+                                <td>{{$inscripcion->nombre_tipo}}</td>
+                                <td>
+                                    
+                                </td>
                           
                                                    
                             </tr>  
