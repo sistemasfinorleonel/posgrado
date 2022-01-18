@@ -10,8 +10,8 @@ class Programa extends Model
     use HasFactory;
   
     public function modulos(){
-        return $this->belongsToMany('App\Models\Modulo');
-        }
+       return $this->belongsToMany('App\Models\Modulo');
+    }
 
 
         public function estudiantes(){

@@ -11,6 +11,7 @@ class Modulo extends Model
     protected $guarded =['id'];
     
     public function programa(){
-    return $this->belongsToMany('App\Models\Programa');
+        
+        return $this->belongsToMany('App\Models\Programa');
     }
 }

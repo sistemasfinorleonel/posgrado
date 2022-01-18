@@ -19,7 +19,7 @@
             <section class="card">
                 <div class="card-body">
                     <h1 class="font-bold text-2xl mb-2"> Lo que aprenderás</h1>
-                    {{-- <ul>
+                     {{-- <ul>
                         @foreach($programa->modulos as $modulo)
                         <li>{{$modulo->pivot->nombre}}</li>
                         @endforeach
