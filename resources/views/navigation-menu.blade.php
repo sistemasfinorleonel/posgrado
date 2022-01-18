@@ -120,7 +120,12 @@
                                 <x-jet-dropdown-link href="{{ route('profile.show') }}">
                                     Perfil
                                 </x-jet-dropdown-link>
-
+                                @can('Leer cursos')
+                                <x-jet-dropdown-link href="{{ route('admin.home') }}">
+                                    admin
+                                </x-jet-dropdown-link>
+                                @endcan
+                                
                                 @can('Leer cursos')
                                 <x-jet-dropdown-link href="{{ route('administrador.programas.index') }}">
                                     Administrador
