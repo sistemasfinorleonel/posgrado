@@ -28,7 +28,7 @@ class Programa extends Model
     }
 
     public function tipoprograma(){
-        return $this->belongsTo('App\Models\TipoPrograma');
+        return $this->belongsTo('App\Models\TipoPrograma','tipo_id','id');
           }
 
           public function scopeTipo($query,$category_id)
