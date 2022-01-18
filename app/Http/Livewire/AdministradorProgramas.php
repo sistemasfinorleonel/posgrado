@@ -16,5 +16,8 @@ class AdministradorProgramas extends Component
        // return view('livewire.administrador-programas',compact('programas'));
    $programas=Programa::where('nombre','LIKE','%'.$this->search. '%',)->paginate(8);
    return view('livewire.administrador-programas',compact('programas'));
+    }  
+     public function limpiar_page(){
+        $this->reset('page');
     }
 }
