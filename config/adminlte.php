@@ -275,12 +275,30 @@ return [
         
         
         [
-            'text'        => 'Docentes',
-            'route'         => 'admin.docentes.index',
-            'icon'        => 'fas fa-fw fa-user',
-            'active'    => ['admin/docentes*']
-            
+            'text'    => 'Docente',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                            [
+                            'text'   => ' Listado de Docentes',
+                            'route'  => 'admin.docentes.index',
+                            'icon'   => 'fas fa-fw fa-user',
+                            'active'  => ['admin/docentes*']
+                            ],
+               
+                            [
+                                'text' => 'Cursos de Docentes',
+                                'url'  => '#',
+                                'icon'   => 'fas fa-fw fa-conf',
+                            ],   [
+                                'text' => 'Expericencia Laboral Docente',
+                                'url'  => '#',
+                            ],   [
+                                'text' => 'Estudio Superior de Docentes',
+                                'url'  => '#',
+                            ],
+            ],
         ],
+
         
         [
             'text'        => 'Estudiantes',
@@ -308,42 +326,31 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        
+        
+        
+        
+        
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'Docentes',
+            'icon'    => 'fas fa-fw fa-user',
             'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
+                            [
+                            'text'   => ' Listado de Docentes',
                             'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
+                           
                             ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
+     
+                            [
+                                'text' => 'Cursos de Docentes',
+                                'url'  => '#',
+                            ],   [
+                                'text' => 'Expericencia Laboral Docente',
+                                'url'  => '#',
+                            ],   [
+                                'text' => 'Estudio Superior de Docentes',
+                                'url'  => '#',
+                            ],
             ],
         ],
         ['header' => 'labels'],

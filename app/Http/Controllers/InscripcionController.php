@@ -71,7 +71,7 @@ class InscripcionController extends Controller
             }
            
                
-        //return redirect()->route('admin.inscripcions.index')->with('info','El  rol se creo  satisfactoriamente');
+        return redirect()->route('admin.inscripcions.index')->with('info','El  rol se creo  satisfactoriamente');
    
     }
 
