@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Estudiante;
 use App\Models\Inscripcion;
+use App\Models\Programa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,8 +16,19 @@ class InscripcionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('admin.inscripcions.inscripcion');
+    {  $listaincripcions=Programa::join('inscripcions','programas.id','=','inscripcions.programa_id')
+        ->join('estudiantes','estudiantes.id','=','inscripcions.estudiante_id')
+        ->join('tipo_programas','tipo_programas.id','=','programas.id')
+        ->get([ 'estudiantes.nombre as nombre_estudiante'
+        ,'estudiantes.Nregistro','estudiantes.paterno','estudiantes.materno'
+        ,'programas.nombre as nombre_programa',
+        'tipo_programas.nombre as nombre_tipo'
+        ]);
+       // join('programa_modulos','programas.id','=','programa_modulos.programa_id')
+        //->where('programa_id','=',$programa->id)->get();
+      //  return $listaincripcions;
+  // return $listaincripcions;
+        return view('admin.inscripcions.lista',compact('listaincripcions'));
        }
 
     /**
@@ -26,9 +38,9 @@ class InscripcionController extends Controller
      */
     public function create()
     {
-     //   return view('admin.inscripcions.inscripcion');
-      
-    }
+        return view('admin.inscripcions.inscripcion');
+     }
+   
 
     /**
      * Store a newly created resource in storage.
