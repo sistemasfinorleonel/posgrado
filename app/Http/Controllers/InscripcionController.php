@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Estudiante;
+use App\Models\Inscripcion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class EstudianteController extends Controller
+class InscripcionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +16,8 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        $estudiantes=Estudiante::paginate(12);
-        return view('admin.estudiantes.index',compact('estudiantes'));
-    
-    }
+        return view('admin.inscripcions.inscripcion');
+       }
 
     /**
      * Show the form for creating a new resource.
@@ -25,9 +25,9 @@ class EstudianteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.estudiantes.create');    
-        //
+    { git
+     //   return view('admin.inscripcions.inscripcion');
+      
     }
 
     /**
@@ -38,10 +38,29 @@ class EstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        $datosestudiante= request()->except('_token');
-  
-        Estudiante::insert($datosestudiante);
-        return redirect()->route('admin.estudiantes.index');   
+ 
+
+        $request->validate([
+            'programaid'=>'required',
+            'estudianteid'=>'required',
+
+        ]);
+       $programaid=$request->programaid;
+        $estudiante=Estudiante::where('id','=',$request->estudianteid)->first()->id;
+                foreach($programaid as $index =>$id)
+            { $id_ser=$programaid[$index];
+           
+            
+                DB::table("inscripcions")
+                ->insert([
+                    'programa_id'=>"$id_ser",
+                    'estudiante_id'=> "$estudiante"
+                ]); 
+            }
+           
+               
+        //return redirect()->route('admin.inscripcions.index')->with('info','El  rol se creo  satisfactoriamente');
+   
     }
 
     /**
@@ -50,9 +69,9 @@ class EstudianteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Estudiante $estudiante)
+    public function show($id)
     {
-        return view('admin.estudiantes.show',compact('estudiante'));  
+        //
     }
 
     /**
@@ -61,10 +80,9 @@ class EstudianteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Estudiante $estudiante)
+    public function edit($id)
     {
-        return view('admin.estudiantes.edit',compact('estudiante'));
-    
+        //
     }
 
     /**
@@ -74,12 +92,10 @@ class EstudianteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Estudiante $estudiante)
+    public function update(Request $request, $id)
     {
-        $datosestudiante= request()->except(['_token','_method']);
-        Estudiante::where('id','=',$estudiante->id)->update($datosestudiante);
-        return redirect()->route('admin.estudiantes.index');
-        }
+        //
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -87,9 +103,8 @@ class EstudianteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Estudiante $estudiante)
+    public function destroy($id)
     {
-        $estudiante->delete();
-        return redirect()->route('admin.estudiantes.index');
+        //
     }
 }

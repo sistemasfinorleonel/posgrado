@@ -14,9 +14,10 @@ class CreateInscripcionsTable extends Migration
     public function up()
     {
         Schema::create('inscripcions', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('estudiante_id');
-            $table->unsignedBigInteger('programa_id');
+            
+            $table->unsignedBigInteger('estudiante_id')->constrained();
+            $table->unsignedBigInteger('programa_id')->constrained();
+            $table->primary(['estudiante_id','programa_id']);
             $table->foreign('estudiante_id')->references('id')->on('estudiantes')->onDelete('cascade');
             $table->foreign('programa_id')->references('id')->on('programas')->onDelete('cascade');
             $table->timestamps();

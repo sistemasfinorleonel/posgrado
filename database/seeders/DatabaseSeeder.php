@@ -21,15 +21,15 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         Storage::deleteDirectory('public/programas');
-        
-         Storage::makeDirectory('public/programas');
-       $this->call(TipoProgramaSeeder::class);
-         $this->call(UserSeeder::class);
+        Storage::makeDirectory('public/programas');
+        $this->call(TipoProgramaSeeder::class);
+        $this->call(UserSeeder::class);
         $this->call(DocenteSeeder::class);
+        $this->call(EstudianteSeeder::class);
         $this->call(CursoSeeder::class);
-  
         $this->call(ProgramaSeeder::class);
         $this->call(ModuloSeeder::class); 
         $this->call(ProgramaModuloSeeder::class);
       }
 }
+ 

@@ -12,8 +12,8 @@ class Estudiante extends Model
     public function grupos(){
         return $this->belongsToMany('App\Models\Grupo');
     }
-    public function programa(){
-        return $this->belongsToMany('App\Models\Programa');
+    public function programas(){
+        return $this->belongsToMany(Programa::class,'inscripcions','estudiante_id','programa_id');
     }
-
+    
 }

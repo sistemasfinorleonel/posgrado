@@ -19,14 +19,12 @@ $pcolor = "";
                         <tr>
                         
                             <th>id</th>
-                           
                             <th>nombre</th>            
                             <th>paterno</th>            
                             <th>materno</th>             
                             <th>correo</th>            
                             <th>telefono</th> 
-                             <th>direccion</th>            
-                             
+                            <th>direccion</th>            
                           {{--   <th>usuario</th>    --}}
                             <th ></th>
                             <th ></th>
@@ -38,10 +36,9 @@ $pcolor = "";
                             <tr>
                                     <td>{{$estudiante->id}}</td>
                                     <td>{{$estudiante->nombre}}</td>
-                                    <td>{{$estudiante->apPaterno}}</td>
-                                    <td>{{$estudiante->apMaterno}}</td>
+                                    <td>{{$estudiante->paterno}}</td>
                                     <td>{{$estudiante->materno}}</td>
-                                    <td>{{$estudiante->mail}}</td>
+                                   <td>{{$estudiante->mail}}</td>
                                     <td>{{$estudiante->telefono}}</td>
                                     <td>{{$estudiante->direccion}}</td>
                                     

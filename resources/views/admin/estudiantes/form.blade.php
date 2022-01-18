@@ -1,8 +1,8 @@
-<div class="form-group">
+{{-- <div class="form-group">
     {!! Form::label('ci','ci') !!}
     {!! Form::text('ci',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
 
-</div>
+</div> --}}
 <div class="form-group">
     {!! Form::label('nombre','nombre') !!}
     {!! Form::text('nombre',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
@@ -24,6 +24,13 @@
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>
+<div class="form-group">
+    {!! Form::label('email','email') !!}
+    {!! Form::text('email',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+@error('email')
+<span class="text-danger">{{$message}}</span>
+@enderror
+</div>
 
 <div class="form-group">
     {!! Form::label('telefono','telefono') !!}
@@ -39,31 +46,7 @@
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>
-<div class="form-group">
-    {!! Form::label('email','email') !!}
-    {!! Form::text('email',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
-@error('email')
-<span class="text-danger">{{$message}}</span>
-@enderror
-</div>
 
 
-
-
-<div class="form-group">
-    {!! Form::label('fecha_nacimiento','fecha_nacimiento') !!}
-   <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" value="{{isset($docente->fecha_nacimiento)?$docente->fecha_nacimiento:""}}">
-  
-@error('fecha_nacimiento')
-<span class="text-danger">{{$message}}</span>
-@enderror
-</div>
-<div class="form-group">
-    {!! Form::label('lugar_nacimiento','lugar_nacimiento') !!}
-    {!! Form::text('lugar_nacimiento',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
-@error('lugar_nacimiento')
-<span class="text-danger">{{$message}}</span>
-@enderror
-</div>
 
 

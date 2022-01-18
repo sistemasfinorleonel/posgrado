@@ -26,13 +26,13 @@
 
                         $modulo->nombre    
                         @endforeach                        
-                        --}}
+                      
                          @foreach($modulosprogramas as $modulosprograma)
                         @php
                         $ind=$modulosprograma->modulo_id;
                         @endphp
                            
-                        @endforeach
+                        @endforeach  --}}
                     </ul> 
 
                    
@@ -43,6 +43,10 @@
                             <h1 class="font-bold text-lg text-gray-600">
 
                                 {{$pr->nombre}}  
+                            </h1>
+                            <h1 class="font-bold text-lg text-gray-600">
+
+                                {{$pr->version}}  
                             </h1>
                         </header>
 

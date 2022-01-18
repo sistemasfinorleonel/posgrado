@@ -286,6 +286,14 @@ return [
             'active'    => ['admin/estudiantes*']
             
         ],
+        
+        [
+            'text'        => 'Inscripcion',
+            'route'         => 'admin.inscripcions.index',
+            'icon'        => 'fas fa-fw fa-user',
+            'active'    => ['admin/inscripcions*']
+            
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
