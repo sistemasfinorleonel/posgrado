@@ -4,7 +4,8 @@
                 <div class="px-6 py-4">
                    <input wire:keydown="limpiar_page" wire:model="search" class="form-input w-full shadow-sm" placeholder="INGRESE EL NOMBRE DEL CURSO">
                 </div>
-                        <table class="min-w-full divide-y divide-gray-200">
+                @if ($programas->count())
+                    <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
                                 <tr>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -65,7 +66,14 @@
                                 @endforeach
                                 <!-- More people... -->
                             </tbody>
-                       </table>
+                    </table>
+                @else
+                <div class="card-body">
+                    <strong> No hay  ningun registro</strong>
+                 </div>
+                    
+                @endif
+                       
                     <div class="px-6 py-4">
                         {{$programas->links()}}
                     </div>
