@@ -25,7 +25,7 @@ class InscripcionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    { git
+    {
      //   return view('admin.inscripcions.inscripcion');
       
     }
