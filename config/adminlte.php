@@ -306,6 +306,36 @@ return [
 
         
         [
+            'text'    => 'Academico',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                            [
+                            'text'   => ' Listado de Horarios',
+                            'route'  => 'admin.horarios.index',
+                            'icon'   => 'fas fa-fw fa-user',
+                            'active'  => ['admin/horarios*']
+                            ],
+               
+                            [
+                                'text' => 'LISTADO  DE GRUPOS',
+                                'route'  => 'admin.grupos.index',
+                                //'icon'   => 'fas fa-fw fa-user',
+                               // 'active'  => ['admin/cursos*']
+                            ],  /*  [
+                                'text' => 'Expericencia Laboral Docente',
+                                'route'  => 'admin.experiencias.index',
+                                //'icon'   => 'fas fa-fw fa-user',
+                                //'active'  => ['admin/cursos*']
+                            ],   [
+                                'text' => 'Estudio Superior de Docentes',
+                                'route'  => 'admin.estudios.index',
+                               // 'icon'   => 'fas fa-fw fa-user',
+                              //  'active'  => ['admin/estudios*']
+                            ], */
+            ],
+        ],
+
+        [
             'text'        => 'Estudiantes',
             'route'         => 'admin.estudiantes.index',
             'icon'        => 'fas fa-fw fa-user',

@@ -10,7 +10,7 @@ class ProgramaModulo extends Model
     use HasFactory;
     protected $guarded =['id'];
     public function  grupos(){ 
-       return $this->hasMany('App\Models\Grupo');
+       return $this->hasMany('App\Models\Grupo','grupos','modulo_id');
 }
 }
 

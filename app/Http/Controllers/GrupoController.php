@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Horario;
+use App\Models\Grupo;
 use Illuminate\Http\Request;
 
-class HorarioController extends Controller
+class GrupoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,11 @@ class HorarioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    $horarios=Horario::paginate(10);
-        return view('admin.horarios.index',compact('horarios'));
+    {
+        $grupos=Grupo::paginate(8);
+       // return $grupos;
+        //->join('programa_modulos','programa_id','id');
+        return view('admin.grupos.index',compact('grupos'));
     }
 
     /**
@@ -41,10 +44,10 @@ class HorarioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Horario  $horario
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Horario $horario)
+    public function show($id)
     {
         //
     }
@@ -52,10 +55,10 @@ class HorarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Horario  $horario
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Horario $horario)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +67,10 @@ class HorarioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Horario  $horario
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Horario $horario)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +78,10 @@ class HorarioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Horario  $horario
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Horario $horario)
+    public function destroy($id)
     {
         //
     }

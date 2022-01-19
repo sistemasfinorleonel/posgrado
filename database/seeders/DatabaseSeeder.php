@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Curso;
 use App\Models\Docente;
+use App\Models\ExperienciaLaboral;
 use App\Models\Programa;
 use App\Models\TipoPrograma;
 use Database\Seeders\TipoProgramaSeeder;
@@ -30,9 +31,12 @@ class DatabaseSeeder extends Seeder
         $this->call(EstudianteSeeder::class);
         $this->call(CursoSeeder::class);
         $this->call(EstudioSuperiorSeeder::class);
+        $this->call(ExperienciaLaboralSeeder::class);
         $this->call(ProgramaSeeder::class);
         $this->call(ModuloSeeder::class); 
         $this->call(ProgramaModuloSeeder::class);
+        $this->call(HorarioSeeder::class);
+        $this->call(GrupoSeeder::class);
        
       }
 }

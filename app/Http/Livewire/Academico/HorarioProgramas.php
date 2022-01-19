@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Academico;
 
-use App\Models\ExperienciaLaboral;
+use App\Models\Horario;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class AdminExperienciasDocente extends Component
+class HorarioProgramas extends Component
 {
+    
     use WithPagination;
     protected $paginationTheme="bootstrap";
     public $search;
     public function render()
-    {$experiencias=ExperienciaLaboral::where('empresa','LIKE','%'.$this->search.'%')
+    {   $horarios=Horario::where('dia','LIKE','%'.$this->search.'%')
         //->orWhere('email','LIKE','%'.$this->search.'%')
         ->paginate(8); 
-        return view('livewire.admin-experiencias-docente',compact('experiencias'));
+  
+        return view('livewire.academico.horario-programas',compact('horarios'));
     }
-    
-    
-   
+
     
     public function limpiar_page(){
         $this->reset('page');

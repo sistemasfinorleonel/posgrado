@@ -20,6 +20,10 @@ class Grupo extends Model
     }
     
     public function programa_modulos(){
-        return $this->belongsTo('App\Models\ProgramaModulo');
+        return $this->belongsTo(ProgramaModulo::class,'programa_modulos','modulo_id ','programa_id');
+    }
+
+    public function docentes(){
+        return $this->belongsTo(Docente::class,'docente_id','id');
     }
 }
