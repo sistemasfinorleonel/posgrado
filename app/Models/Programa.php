@@ -15,7 +15,7 @@ class Programa extends Model
     use HasFactory;
   
     public function modulos(){
-        return $this->belongsToMany(Modulo::class);
+        return $this->belongsToMany(Modulo::class,'programa_modulos','modulo_id','programa_id');
         }
 
 

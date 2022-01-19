@@ -15,6 +15,6 @@ class Modulo extends Model
          'subPrograma'
     ];
     public function programas(){
-    return $this->belongsToMany(Programa::class);
+    return $this->belongsToMany(Programa::class,'programa_modulos','modulo_id','programa_id');
     }
 }
