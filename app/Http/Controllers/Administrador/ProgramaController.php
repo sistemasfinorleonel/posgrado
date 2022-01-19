@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrador;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Programa;
+use App\Models\TipoPrograma;
 
 
 
@@ -37,7 +38,10 @@ class ProgramaController extends Controller
     
     public function edit(Programa $programa)
     {
-        return view('administrador.programas.edit', compact('programa'));
+        $tipo = TipoPrograma::pluck('nombre', 'id');
+
+        
+        return view('administrador.programas.edit', compact('programa','tipo'));
     }
 
     
