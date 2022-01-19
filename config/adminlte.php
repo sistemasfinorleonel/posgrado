@@ -287,14 +287,19 @@ return [
                
                             [
                                 'text' => 'Cursos de Docentes',
-                                'url'  => '#',
-                                'icon'   => 'fas fa-fw fa-conf',
+                                'route'  => 'admin.cursos.index',
+                                'icon'   => 'fas fa-fw fa-user',
+                                'active'  => ['admin/cursos*']
                             ],   [
                                 'text' => 'Expericencia Laboral Docente',
                                 'url'  => '#',
+                                'icon'   => 'fas fa-fw fa-user',
+                                //'active'  => ['admin/cursos*']
                             ],   [
                                 'text' => 'Estudio Superior de Docentes',
                                 'url'  => '#',
+                                'icon'   => 'fas fa-fw fa-user',
+                                //'active'  => ['admin/cursos*']
                             ],
             ],
         ],
