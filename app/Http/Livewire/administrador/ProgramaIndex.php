@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\administrador;
 
 use App\Models\Programa;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination; 
 
-class AdministradorProgramas extends Component
+class ProgramaIndex extends Component
 {
     public $search;
     use WithPagination;
@@ -15,7 +15,7 @@ class AdministradorProgramas extends Component
     {// $programas =Programa::where('user_id',auth()->user()->id)->paginate(8);
        // return view('livewire.administrador-programas',compact('programas'));
    $programas=Programa::where('nombre','LIKE','%'.$this->search. '%',)->paginate(8);
-   return view('livewire.administrador-programas',compact('programas'));
+   return view('livewire.administrador.programas-index',compact('programas'));
     }  
      public function limpiar_page(){
         $this->reset('page');
