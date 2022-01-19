@@ -29,8 +29,8 @@
                              <td>{{$estudio->ciudad}}</td>
                              <td>{{$estudio->pais}}</td>
                              <td>{{$estudio->docentes->nombre}}{{$estudio->docentes->paterno}}</td>
-                             <td>{{$estudio->docentes->email}}</td>
-                             <td width="10px">
+                       {{--}}      <td>{{$estudio->docentes->email}}</td>
+                       --}}       <td width="10px">
                                  <a class="btn btn-primary" href="{{ route('admin.estudios.edit',$estudio) }}">Editar</a>
                              </td>
                              <td width="10px">
