@@ -11,17 +11,17 @@ class Docente extends Model
     protected $guarded =['id'];
 
         public function cursos(){
-            return $this->hasMany('App\Models\Curso');
+            return $this->hasMany('App\Models\Curso','docente_id','id');
         }
 
         
         public function estudio_superior(){
-            return $this->hasMany('App\Models\EstudioSuperior');
+            return $this->hasMany('App\Models\EstudioSuperior','docente_id','id');
         }
 
         
         public function exeriencia_laboral(){
-            return $this->hasMany('App\Models\ExperienciaLaboral');
+            return $this->hasMany('App\Models\ExperienciaLaboral','docente_id','id');
         }
 
         public function grupos(){

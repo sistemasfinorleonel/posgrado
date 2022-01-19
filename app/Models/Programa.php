@@ -20,7 +20,7 @@ class Programa extends Model
 
 
         public function estudiantes(){
-            return $this->belongsToMany('App\Models\Estudiante');
+            return $this->belongsToMany('App\Models\Estudiante','inscripcions','estudiante_id','programa_id');
             }
     
     public function image(){

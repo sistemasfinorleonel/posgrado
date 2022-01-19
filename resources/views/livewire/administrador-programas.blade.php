@@ -73,7 +73,7 @@
                  </div>
                     
                 @endif
-                       
+
                     <div class="px-6 py-4">
                         {{$programas->links()}}
                     </div>
