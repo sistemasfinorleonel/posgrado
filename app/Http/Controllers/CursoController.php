@@ -14,7 +14,9 @@ class CursoController extends Controller
      */
     public function index()
     {
-        //
+        $cursos=Curso::paginate(8);
+       // return $cursos;
+        return view('admin.cursos.index',compact('cursos'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CursoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.cursos.create');
     }
 
     /**
@@ -35,7 +37,7 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

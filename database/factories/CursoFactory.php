@@ -20,7 +20,7 @@ class CursoFactory extends Factory
         return[
             'nombre'=>$this->faker->name(),
             'institucion'=> $this->faker->name(),
-            'año'=> $this->faker->randomElement(['1990','2000']),
+            'anio'=> $this->faker->randomElement(['1990','2000']),
             'docente_id'=> Docente::all()->random()->id,
 
         ];

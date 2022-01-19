@@ -18,7 +18,7 @@ class CreateCursosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('institucion');
-            $table->string('año');
+            $table->string('anio');
             $table->unsignedBigInteger('docente_id');
             $table->foreign('docente_id')->references('id')->on('docentes')->onDelete('cascade');
             
