@@ -9,18 +9,19 @@
          <table class="table table-striped">
              <thead>
                  <tr>
-                     <th>ID</th>
+                  <th>ID GRUPO</th>  
+                  <th>NOMBRE DEL PROGRAMA</th>
                      <th>NOMBRE DEL DOCENTE</th>
-                     <th>NOMBRE</th>
-                     <th>HORA SALIDA</th>
+                    
                  </tr>
              </thead>
              <tbody>
                  @foreach ($grupos as $grupo)
                      <tr> 
                        
-                         <td>{{$grupo->modulo_id}}</td>
-                         <td>{{$grupo->docentes->nombre}}</td>
+                      <td>{{$grupo->id}}</td>
+                         <td>{{$grupo->nombre_programa}}</td>
+                         <td>{{$grupo->nombre_docente}}</td>
                          
                          <td></td>{{--$grupo->programa_modulos->programa_id}}</td>
                          {{-- <td>{{$grupo->dia}}</td>
@@ -44,10 +45,10 @@
          </table>
          </div>
  
-         <div class="card-footer">
+       {{--   <div class="card-footer">
              {{$grupos->links()}}
          
-            </div>
+            </div> --}}
      
      @else
         <div class="card-body">
