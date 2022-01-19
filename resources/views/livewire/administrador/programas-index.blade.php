@@ -1,8 +1,9 @@
 <div class="container " >
 <!-- This example requires Tailwind CSS v2.0+ -->
     <x-table-responsive>
-                <div class="px-6 py-4">
-                   <input wire:keydown="limpiar_page" wire:model="search" class="form-input w-full shadow-sm" placeholder="INGRESE EL NOMBRE DEL CURSO">
+                <div class="px-6 py-4 flex">
+                   <input wire:keydown="limpiar_page" wire:model="search" class="form-input flex-1 shadow-sm" placeholder="INGRESE EL NOMBRE DEL CURSO">
+                   <a class="btn btn-danger ml-2" href="{{route('administrador.programas.create')}}">Crear nuevo programa</a>
                 </div>
                 @if ($programas->count())
                     <table class="min-w-full divide-y divide-gray-200">

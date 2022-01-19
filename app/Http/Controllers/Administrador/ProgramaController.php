@@ -20,7 +20,9 @@ class ProgramaController extends Controller
     
     public function create()
     {
-        return view('administrador.programas.create');
+        $tipo = TipoPrograma::pluck('nombre', 'id');
+
+        return view('administrador.programas.create', compact('tipo'));
     }
 
    
