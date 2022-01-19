@@ -292,14 +292,14 @@ return [
                                 'active'  => ['admin/cursos*']
                             ],   [
                                 'text' => 'Expericencia Laboral Docente',
-                                'url'  => '#',
+                                'route'  => 'admin.experiencias.index',
                                 'icon'   => 'fas fa-fw fa-user',
                                 //'active'  => ['admin/cursos*']
                             ],   [
                                 'text' => 'Estudio Superior de Docentes',
-                                'url'  => '#',
+                                'route'  => 'admin.estudios.index',
                                 'icon'   => 'fas fa-fw fa-user',
-                                //'active'  => ['admin/cursos*']
+                                'active'  => ['admin/estudios*']
                             ],
             ],
         ],

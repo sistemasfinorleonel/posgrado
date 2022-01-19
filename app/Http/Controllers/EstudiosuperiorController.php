@@ -14,7 +14,8 @@ class EstudiosuperiorController extends Controller
      */
     public function index()
     {
-        //
+        $estudios=Estudiosuperior::paginate(8);
+         return view('admin.estudios.index',compact('estudios'));
     }
 
     /**
