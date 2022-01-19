@@ -13,8 +13,10 @@ class ExperiencialaboralController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {        $experiencias=Experiencialaboral::paginate(8);
+        return view('admin.experiencias.index',compact('experiencias'));
+
+        
     }
 
     /**
