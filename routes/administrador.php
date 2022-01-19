@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\AdministradorProgramas;
+use App\Http\Controllers\Administrador\ProgramaController;
+
 
 Route::redirect('', 'administrador/programas');
-Route::get('programas', AdministradorProgramas::class)->middleware('can:Leer cursos')->name('programas.index');
+Route::resource('programas', ProgramaController::class)->names('programas');

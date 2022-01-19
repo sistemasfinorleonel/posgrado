@@ -11,5 +11,5 @@
             </div>
         </div>
     </section>  
-    @livewire('programa-index')
+    @livewire('programas-index')
 </x-app-layout>
