@@ -13,10 +13,10 @@ class GrupoProgramas extends Component
     protected $paginationTheme="bootstrap";
     public $search;
     public function render()
-    {   $grupos=Grupo::join('docentes','id','=','docente_id')->get();
+    {   $grupos=Grupo:://join('docentes','id','=','docente_id')->get();
         //orWhere('email','LIKE','%'.$this->search.'%')->
         //->
-        //paginate(8); 
+        paginate(8); 
         //return $grupos;
   
         return view('livewire.academico.grupo-programas',compact('grupos'));
