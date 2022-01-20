@@ -25,7 +25,6 @@ $pcolor = "";
                             <th>correo</th>            
                             <th>telefono</th> 
                             <th>direccion</th>            
-                          {{--   <th>usuario</th>    --}}
                             <th ></th>
                             <th ></th>
                         </tr>
@@ -35,6 +34,8 @@ $pcolor = "";
                         @foreach ($estudiantes as $estudiante)
                             <tr>
                                     <td>{{$estudiante->id}}</td>
+                                    
+                                    <td>{{$estudiante->Nregistro}}</td>
                                     <td>{{$estudiante->nombre}}</td>
                                     <td>{{$estudiante->paterno}}</td>
                                     <td>{{$estudiante->materno}}</td>
@@ -42,8 +43,6 @@ $pcolor = "";
                                     <td>{{$estudiante->telefono}}</td>
                                     <td>{{$estudiante->direccion}}</td>
                                     
-                                   {{--  <td>{{$estudiante->user->name}}</td> --}}
-                                     
                                     <td>
                                         <a class ="btn btn-primary btn-sm"href="{{route('admin.estudiantes.edit',$estudiante)}}">editar</a>
                                     </td>  

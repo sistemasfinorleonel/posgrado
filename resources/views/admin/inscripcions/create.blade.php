@@ -3,12 +3,14 @@
 @section('title', 'PostGrado')
 
 @section('content_header')
-    <h1>lista de usuarios</h1>
+<div class="card-header">
+    <strong>INSCRIPCION DE MATERIAS</strong>
+</div>
 @stop
 
 @section('content')
 
-@livewire('admin-inscripcions')
+@livewire('academico.inscripcion.create-inscripcion')
 
 
 @stop

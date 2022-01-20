@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Estudiante;
 use App\Models\Inscripcion;
 use App\Models\Programa;
+use App\Models\TipoPrograma;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,19 +17,32 @@ class InscripcionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {  $listaincripcions=Programa::join('inscripcions','programas.id','=','inscripcions.programa_id')
-        ->join('estudiantes','estudiantes.id','=','inscripcions.estudiante_id')
-        ->join('tipo_programas','tipo_programas.id','=','programas.id')
-        ->get([ 'estudiantes.nombre as nombre_estudiante'
+    { /*  $listaincripcions=Programa::select( [ 'estudiantes.nombre as nombre_estudiante'
         ,'estudiantes.Nregistro','estudiantes.paterno','estudiantes.materno'
         ,'programas.nombre as nombre_programa',
         'tipo_programas.nombre as nombre_tipo'
-        ]);
-       // join('programa_modulos','programas.id','=','programa_modulos.programa_id')
+        ] )->join('inscripcions','programas.id','=','inscripcions.programa_id')
+        ->join('estudiantes','estudiantes.id','=','inscripcions.estudiante_id')
+        ->join('tipo_programas','tipo_programas.id','=','programas.id')
+        ->paginate(8);
+      
+     
+        */ // join('programa_modulos','programas.id','=','programa_modulos.programa_id')
         //->where('programa_id','=',$programa->id)->get();
       //  return $listaincripcions;
-  // return $listaincripcions;
-        return view('admin.inscripcions.lista',compact('listaincripcions'));
+   //return $listaincripcions;
+   $listaincripcions=Estudiante::join('inscripcions','estudiantes.id','=','inscripcions.estudiante_id')
+   
+    ->join('programas','programas.id','=','inscripcions.programa_id')
+    ->join('tipo_programas','programas.tipo_id','=','tipo_programas.id')
+
+    ->get( [ 'estudiantes.nombre as nombre_estudiante'
+    ,'estudiantes.Nregistro','estudiantes.paterno','estudiantes.materno'
+    ,'programas.nombre as nombre_programa',
+    'tipo_programas.nombre as nombre_tipo'
+    ] );
+   
+   return view('admin.inscripcions.index',compact('listaincripcions'));
        }
 
     /**
@@ -38,7 +52,7 @@ class InscripcionController extends Controller
      */
     public function create()
     {
-        return view('admin.inscripcions.inscripcion');
+        return view('admin.inscripcions.create');
      }
    
 
@@ -49,30 +63,28 @@ class InscripcionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+  {/*   {  $request->validate([
+        'programaid'=>'required',
+        'estudianteid'=>'required',
+
+    ]); */
+     $id_programa=$request->programaid;
+    $id_estudiante=$request->estudianteid;
+    
+
+           $re= DB::table("inscripcions")
+            ->insert([
+                'programa_id'=>$id_programa,
+                'estudiante_id'=> $id_estudiante
+            ]); 
+           // return $re;
+        
+       
+           
+    return redirect()->route('admin.inscripcions.index')->with('info','El  rol se creo  satisfactoriamente');
+
+
  
-
-        $request->validate([
-            'programaid'=>'required',
-            'estudianteid'=>'required',
-
-        ]);
-       $programaid=$request->programaid;
-        $estudiante=Estudiante::where('id','=',$request->estudianteid)->first()->id;
-                foreach($programaid as $index =>$id)
-            { $id_ser=$programaid[$index];
-           
-            
-                DB::table("inscripcions")
-                ->insert([
-                    'programa_id'=>"$id_ser",
-                    'estudiante_id'=> "$estudiante"
-                ]); 
-            }
-           
-               
-        return redirect()->route('admin.inscripcions.index')->with('info','El  rol se creo  satisfactoriamente');
-   
     }
 
     /**
