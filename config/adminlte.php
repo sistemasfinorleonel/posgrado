@@ -317,11 +317,26 @@ return [
                             ],
                
                             [
-                                'text' => 'LISTADO  DE GRUPOS',
-                                'route'  => 'admin.grupos.index',
+                                'text' => 'Programa Modulo',
+                                'url'  => 'programa-modulo',
                                 //'icon'   => 'fas fa-fw fa-user',
                                // 'active'  => ['admin/cursos*']
-                            ],  /*  [
+                            ], 
+                            
+                            
+                            [
+                                'text' => 'Grupo Horario',
+                                'url'  => 'grupo-horario',
+                                //'icon'   => 'fas fa-fw fa-user',
+                               // 'active'  => ['admin/cursos*']
+                            ],
+                            [
+                                'text' => 'Grupo Estudiante',
+                                'url'  => 'grupo-estudiante',
+                                //'icon'   => 'fas fa-fw fa-user',
+                               // 'active'  => ['admin/cursos*']
+                            ],/*  [
+                                grupo-estudiante
                                 'text' => 'Expericencia Laboral Docente',
                                 'route'  => 'admin.experiencias.index',
                                 //'icon'   => 'fas fa-fw fa-user',
