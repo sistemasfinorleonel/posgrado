@@ -1,14 +1,17 @@
-
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'PostGrado')
 
+@section('content_header')
+    <h1><strong>Modulos</strong></h1>
+@stop
 
 @section('content')
+
 <div class="card">
     <div class="card-body">
            <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('admin.estudiantes.create')}}"> Agregar estudiantes</a>            
+               <a class ="btn btn-primary"href="{{route('admin.modulos.create')}}"> Agregar modulos</a>            
             </div> 
             <div class="card-body">  
                 <table id ="estudiante"class= "table table-striped" style="width:100%"> 
@@ -16,37 +19,35 @@
                         <tr>
                         
                             <th>Id</th>
-                            <th>Registro</th>            
                             <th>Nombre</th>            
-                            <th>Paterno</th>            
-                            <th>Materno</th>             
-                            <th>Email</th>            
-                            <th>Telefono</th> 
-                            <th>Direccion</th>            
+                            <th>Credito</th>            
+                            <th>Horas Academicas</th>            
+                            <th>Horas Investigacion</th>             
+                         
+                            <th>Subprograma</th>            
                             <th ></th>
                             <th ></th>
                         </tr>
                     </thead>
                     
                     <tbody>
-                        @foreach ($estudiantes as $estudiante)
+                        @foreach ($modulos as $modulo)
                             <tr>
-                                    <td>{{$estudiante->id}}</td>
+                                    <td>{{$modulo->id}}</td>
                                     
-                                    <td>{{$estudiante->Nregistro}}</td>
-                                    <td>{{$estudiante->nombre}}</td>
-                                    <td>{{$estudiante->paterno}}</td>
-                                    <td>{{$estudiante->materno}}</td>
-                                   <td>{{$estudiante->email}}</td>
-                                    <td>{{$estudiante->telefono}}</td>
-                                    <td>{{$estudiante->direccion}}</td>
+                                    <td>{{$modulo->nombre}}</td>
+                                    <td>{{$modulo->credito}}</td>
+                                    <td>{{$modulo->horasAcademica}}</td>
+                                    <td>{{$modulo->horasInvestigacion}}</td>
+                                  
+                                    <td>{{$modulo->subPrograma}}</td>
                                     
                                     <td>
-                                        <a class ="btn btn-primary"href="{{route('admin.estudiantes.edit',$estudiante)}}">Editar</a>
+                                        <a class ="btn btn-primary"href="{{route('admin.modulos.edit',$modulo)}}">Editar</a>
                                     </td>  
-                        
+                        `
                                     <td >
-                                        <form action="{{route('admin.estudiantes.destroy',$estudiante)}}" method="post">
+                                        <form action="{{route('admin.modulos.destroy',$modulo)}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger " type="submit">Eliminar</button>
@@ -58,7 +59,13 @@
                     </tbody>
                 </table>
             </div>
-</div>
+            
+
+        </div>
+
+
+
+
 
 
 

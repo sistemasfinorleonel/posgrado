@@ -39,5 +39,5 @@ Route::get('grupo-estudiante',[GrupoEstudianteController::class,'mostrar']);
 
 
 Route::get('/example',function (){
-    return grupos_estudiantes();
+    return programas_modulos("");
 });

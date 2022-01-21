@@ -13,6 +13,7 @@ use App\Http\Controllers\ExperiencialaboralController;
 use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\InscripcionController;
+use App\Http\Controllers\ModuloController;
 use App\Models\EstudioSuperior;
 use App\Models\ExperienciaLaboral;
 
@@ -26,5 +27,6 @@ Route::resource('estudios',EstudiosuperiorController::class)->names('estudios');
 Route::resource('estudiantes',EstudianteController::class)->names('estudiantes');
 Route::resource('horarios',HorarioController::class)->names('horarios');
 Route::resource('grupos',GrupoController::class)->names('grupos');
+Route::resource('modulos',ModuloController::class)->names('modulos');
 Route::resource('inscripcions',InscripcionController::class)->names('inscripcions');
 
