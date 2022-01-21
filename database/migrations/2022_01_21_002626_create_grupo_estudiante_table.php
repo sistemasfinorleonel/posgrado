@@ -13,10 +13,9 @@ class CreateGrupoEstudianteTable extends Migration
      */
     public function up()
     {
-        Schema::create('_grupo_estudiante', function (Blueprint $table) {
-          
+        Schema::create('grupo_estudiante', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('nota');
-
             $table->unsignedBigInteger('grupo_id')->constrained();
             $table->unsignedBigInteger('estudiante_id')->constrained();
             $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('cascade');
@@ -32,6 +31,6 @@ class CreateGrupoEstudianteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_grupo_estudiante');
+        Schema::dropIfExists('grupo_estudiante');
     }
 }

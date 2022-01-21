@@ -5,17 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProgramaModulo extends Model
+class GrupoHorario extends Model
 {
     use HasFactory;
-    protected $table = 'programa_modulos';
+    protected $table = 'grupo_horario';
     protected $primaryKey='id';
 
     protected $fillable =[
-            'edicion',
-            'programa_id',
-            'modulo_id',
+        'aula',
+        'grupo_id',
+        'horario_id',
     ];
     
 }
-

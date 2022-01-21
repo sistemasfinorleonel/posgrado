@@ -13,12 +13,11 @@ class CreateGrupoHorarioTable extends Migration
      */
     public function up()
     {
-        Schema::create('_grupo_horario', function (Blueprint $table) {
-            
+        Schema::create('grupo_horario', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('aula');
             $table->unsignedBigInteger('grupo_id')->constrained();
             $table->unsignedBigInteger('horario_id')->constrained();
-            $table->primary(['grupo_id','horario_id']);
             $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('cascade');
             $table->foreign('horario_id')->references('id')->on('horarios')->onDelete('cascade');
             $table->timestamps();
@@ -32,6 +31,6 @@ class CreateGrupoHorarioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_grupo_horario');
+        Schema::dropIfExists('grupo_horario');
     }
 }
