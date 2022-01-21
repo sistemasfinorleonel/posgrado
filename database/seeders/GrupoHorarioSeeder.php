@@ -15,18 +15,18 @@ class GrupoHorarioSeeder extends Seeder
     public function run()
     {
         
-        GrupoHorario::create(['docente_id'=>1,'programa_modulo_id'=>1]);
-        GrupoHorario::create(['docente_id'=>1,'programa_modulo_id'=>2]);
-        GrupoHorario::create(['docente_id'=>1,'programa_modulo_id'=>3]);
-        GrupoHorario::create(['docente_id'=>2,'programa_modulo_id'=>4]);
-        GrupoHorario::create(['docente_id'=>2,'programa_modulo_id'=>5]);
-        GrupoHorario::create(['docente_id'=>2,'programa_modulo_id'=>6]);
-        GrupoHorario::create(['docente_id'=>3,'programa_modulo_id'=>7]);
-        GrupoHorario::create(['docente_id'=>3,'programa_modulo_id'=>8]);
-        GrupoHorario::create(['docente_id'=>4,'programa_modulo_id'=>9]);
-        GrupoHorario::create(['docente_id'=>4,'programa_modulo_id'=>10]);
-        GrupoHorario::create(['docente_id'=>4,'programa_modulo_id'=>11]);
-        GrupoHorario::create(['docente_id'=>4,'programa_modulo_id'=>12]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>1,'grupo_id'=>1]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>1,'grupo_id'=>2]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>1,'grupo_id'=>3]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>2,'grupo_id'=>4]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>2,'grupo_id'=>5]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>2,'grupo_id'=>6]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>3,'grupo_id'=>7]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>3,'grupo_id'=>8]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>4,'grupo_id'=>9]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>4,'grupo_id'=>10]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>4,'grupo_id'=>11]);
+        GrupoHorario::create(['aula'=>'s4','horario_id'=>4,'grupo_id'=>12]);
     
     }
 }
