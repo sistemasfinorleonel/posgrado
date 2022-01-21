@@ -47,8 +47,6 @@ class Index extends Component
             save_grupo_horario($this->aula,$this->grupo_id,$this->horario_id);
             $this->close_form_add();
         }
-
-
         $this->reset_grupo_horario();
     }
 

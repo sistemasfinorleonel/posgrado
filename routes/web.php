@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProgramaController;
 use App\Http\Controllers\ProgramaModulocontroller;
+use App\Models\GrupoHorario;
 use App\Models\Programa;
 
 /*
@@ -34,3 +35,9 @@ Route::get('programa-modulo',[ProgramaModulocontroller::class,'mostrar']);
 Route::get('grupo-horario',[GrupoHorarioController::class,'mostrar']);
 Route::get('grupo-estudiante',[GrupoEstudianteController::class,'mostrar']);
 
+
+
+
+Route::get('/example',function (){
+    return grupos_estudiantes();
+});

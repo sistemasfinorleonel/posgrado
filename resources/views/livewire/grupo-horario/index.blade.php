@@ -18,24 +18,28 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Tipo</th>
+                                    <th>Aula</th>
+                                    <th>Docente</th>
                                     <th>Programa</th>
                                     <th>Modulo</th>
+                                    <th>Horario</th>
                                     <th>Edicion</th>
                                     <th>Accion</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($grupos_horarios as $programa_modulo)
+                                @foreach ($grupos_horarios as $grupo_horario)
                                     <tr>
-                                        <td>{{$programa_modulo->id}}</td>    
-                                        <td>{{ tipo_programa(programa($programa_modulo->programa_id)->tipo_id)->nombre }}</td>    
-                                        <td>{{ programa($programa_modulo->programa_id)->nombre }}</td>    
-                                        <td>{{modulo($programa_modulo->horario_id)->nombre}}</td>    
-                                        <td>{{$programa_modulo->edicion}}</td>    
+                                        <td>{{$grupo_horario->id}} </td>   
+                                        <td>{{$grupo_horario->aula}}</td>    
+                                        <td>{{docente(grupo($grupo_horario->grupo_id)->docente_id)->nombre}} </td>    
+                                        <td>{{programa(programa_modulo(grupo($grupo_horario->grupo_id)->programa_modulo_id)->programa_id)->nombre }} </td>    
+                                        <td>{{modulo(programa_modulo(grupo($grupo_horario->grupo_id)->programa_modulo_id)->modulo_id)->nombre }} </td>    
+                                        <td>{{$grupo_horario->dia}} - {{$grupo_horario->horaEntrada}} &nbsp; {{$grupo_horario->horaSalida}}</td>
+                                        <td>{{programa_modulo(grupo($grupo_horario->grupo_id)->programa_modulo_id)->edicion}} </td>    
                                         <td>
-                                            <button class="btn btn-success" wire:click="show_form_update({{$programa_modulo->id}})">Editar</button>
-                                            <button class="btn btn-danger" wire:click="delete_programa_modulo({{$programa_modulo->id}})">Eliminar</button>
+                                            <button class="btn btn-success" wire:click="show_form_update({{$grupo_horario->id}})">Editar</button>
+                                            <button class="btn btn-danger" wire:click="delete_grupo_horario({{$grupo_horario->id}})">Eliminar</button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -81,7 +85,7 @@
                             <option value="">Seleccione un grupo</option>
                         @endif
                         @foreach (grupos() as $grupo)
-                            <option value="{{$grupo->id}}">{{$grupo->id}} </option>
+                            <option value="{{$grupo->id}}">{{$grupo->id}} {{docente($grupo->docente_id)->nombre}} </option>
                         @endforeach
                     </select>
                     <small id="helpId" class="text-muted"></small>
