@@ -40,7 +40,7 @@ $pcolor = "";
                                     <td>{{$estudiante->nombre}}</td>
                                     <td>{{$estudiante->paterno}}</td>
                                     <td>{{$estudiante->materno}}</td>
-                                   <td>{{$estudiante->mail}}</td>
+                                   <td>{{$estudiante->email}}</td>
                                     <td>{{$estudiante->telefono}}</td>
                                     <td>{{$estudiante->direccion}}</td>
                                     
