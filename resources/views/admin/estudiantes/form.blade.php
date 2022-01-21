@@ -4,8 +4,15 @@
 
 </div> --}}
 <div class="form-group">
+    {!! Form::label('Nregistro','Nregistro') !!}
+    {!! Form::text('Nregistro',null , ['class'=>'form-control','placeholder'=>'INGRESE EL NUMERO  DE REGISTRO']) !!}
+    @error('Nregistro')
+<span class="text-danger">{{$message}}</span>
+@enderror
+</div>
+<div class="form-group">
     {!! Form::label('nombre','nombre') !!}
-    {!! Form::text('nombre',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::text('nombre',null , ['class'=>'form-control','placeholder'=>'INGRESE EL NOMBRE']) !!}
 
     @error('nombre')
 <span class="text-danger">{{$message}}</span>
@@ -13,7 +20,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('paterno','paterno') !!}
-    {!! Form::text('paterno',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::text('paterno',null , ['class'=>'form-control','placeholder'=>'INGRESE EL PATERNO']) !!}
 @error('paterno')
 <span class="text-danger">{{$message}}</span>
 @enderror
