@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\GrupoHorario;
 
+use App\Models\GrupoHorario;
 use App\Models\ProgramaModulo;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -12,10 +13,10 @@ class Index extends Component
     protected $paginationTheme="bootstrap";
     use WithPagination;
 
-    public $programa_modulo_id;
-    public $edicion;
-    public $programa_id;
-    public $modulo_id;
+    public $grupo_horario_id;
+    public $aula;
+    public $grupo_id;
+    public $horario_id;
     public $search;
 
     public $isEdit = false;
@@ -24,7 +25,7 @@ class Index extends Component
     {
         $search = '%'.$this->search.'%';
         return view('livewire.grupo-horario.index',[
-            'programas_modulos' => grupos_horarios($search)
+            'grupos_horarios' => grupos_horarios($search)
         ]);
     }
 
@@ -36,42 +37,42 @@ class Index extends Component
         $this->table = true;
     }
 
-    public function save_or_update_programa_modulo(){
+    public function save_or_update(){
 
         if($this->isEdit){
-            update_programa_modulo($this->programa_modulo_id,$this->edicion,$this->programa_id,$this->modulo_id);
+            update_grupo_horario($this->grupo_horario_id,$this->aula,$this->grupo_id,$this->horario_id);
             $this->close_form_add();
-            $this->programa_modulo_id;
+            $this->grupo_horario_id;
         }else{
-            save_programa_modulo($this->edicion,$this->programa_id,$this->modulo_id);
+            save_grupo_horario($this->aula,$this->grupo_id,$this->horario_id);
             $this->close_form_add();
         }
 
 
-        $this->reset_programa_modulo();
+        $this->reset_grupo_horario();
     }
 
-    public function reset_programa_modulo(){
-        $this->edicion = null;
-        $this->programa_id = null;
-        $this->modulo_id = null;
+    public function reset_grupo_horario(){
+        $this->aula = null;
+        $this->grupo_id = null;
+        $this->horario_id = null;
     }
     public function limpiar_page(){
         $this->reset('page');
     }
 
-    public function delete_programa_modulo($id){
-        $programa_modulo = ProgramaModulo::findOrFail($id);
-        $programa_modulo->delete();
+    public function delete_grupo_horario($id){
+        $grupo_horario = GrupoHorario::findOrFail($id);
+        $grupo_horario->delete();
     }
 
-    public function show_form_update(ProgramaModulo $programa_modulo){
+    public function show_form_update(GrupoHorario $grupo_horario){
         $this->isEdit = true;
         $this->table = false;
 
-        $this->programa_modulo_id = $programa_modulo->id;
-        $this->edicion = $programa_modulo->edicion;
-        $this->programa_id = $programa_modulo->programa_id;
-        $this->modulo_id = $programa_modulo->modulo_id;
+        $this->grupo_horario_id = $grupo_horario->id;
+        $this->aula = $grupo_horario->aula;
+        $this->grupo_id = $grupo_horario->grupo_id;
+        $this->horario_id = $grupo_horario->horario_id;
     }
 }

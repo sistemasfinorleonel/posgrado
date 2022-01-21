@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Grupo;
 use App\Models\GrupoHorario;
+use App\Models\Horario;
 use App\Models\Modulo;
 use App\Models\Programa;
 use App\Models\ProgramaModulo;
@@ -33,6 +35,12 @@ function modulos(){
     return Modulo::all();
 }
 
+function grupos(){
+    return Grupo::all();
+}
+function horarios(){
+    return Horario::all();
+}
 
 function save_programa_modulo($edicion,$programa_id,$modulo_id){
     $programa_modulo =  new ProgramaModulo();
