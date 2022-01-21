@@ -11,20 +11,21 @@ $pcolor = "";
 <div class="card">
     <div class="card-body">
            <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('admin.estudiantes.create')}}"> agregar estudiantes</a>            
+               <a class ="btn btn-primary"href="{{route('admin.estudiantes.create')}}"> Agregar estudiantes</a>            
             </div> 
             <div class="card-body">  
                 <table id ="estudiante"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
-                            <th>id</th>
-                            <th>nombre</th>            
-                            <th>paterno</th>            
-                            <th>materno</th>             
-                            <th>correo</th>            
-                            <th>telefono</th> 
-                            <th>direccion</th>            
+                            <th>Id</th>
+                            <th>Registro</th>            
+                            <th>Nombre</th>            
+                            <th>Paterno</th>            
+                            <th>Materno</th>             
+                            <th>Email</th>            
+                            <th>Telefono</th> 
+                            <th>Direccion</th>            
                             <th ></th>
                             <th ></th>
                         </tr>
@@ -44,14 +45,14 @@ $pcolor = "";
                                     <td>{{$estudiante->direccion}}</td>
                                     
                                     <td>
-                                        <a class ="btn btn-primary btn-sm"href="{{route('admin.estudiantes.edit',$estudiante)}}">editar</a>
+                                        <a class ="btn btn-primary"href="{{route('admin.estudiantes.edit',$estudiante)}}">Editar</a>
                                     </td>  
                         
                                     <td >
                                         <form action="{{route('admin.estudiantes.destroy',$estudiante)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                        <button class="btn btn-danger " type="submit">Eliminar</button>
                                         </form>
                                     </td> 
                                                    

@@ -276,7 +276,7 @@ return [
         
         [
             'text'    => 'Docente',
-            'icon'    => 'fas fa-fw fa-user',
+            'icon'    => 'fas fa-chalkboard-teacher',
             'submenu' => [
                             [
                             'text'   => ' Listado de Docentes',
@@ -307,19 +307,19 @@ return [
         
         [
             'text'    => 'Academico',
-            'icon'    => 'fas fa-fw fa-user',
+            'icon'    => 'fas fa-graduation-cap',
             'submenu' => [
                             [
                             'text'   => ' Listado de Horarios',
                             'route'  => 'admin.horarios.index',
-                            'icon'   => 'fas fa-fw fa-user',
+                            'icon'   => 'fas fa-clock',
                             'active'  => ['admin/horarios*']
                             ],
                
                             [
                                 'text' => 'Programa Modulo',
                                 'url'  => 'programa-modulo',
-                                //'icon'   => 'fas fa-fw fa-user',
+                                'icon'   => 'fas fa-list',
                                // 'active'  => ['admin/cursos*']
                             ], 
                             
@@ -327,13 +327,13 @@ return [
                             [
                                 'text' => 'Grupo Horario',
                                 'url'  => 'grupo-horario',
-                                //'icon'   => 'fas fa-fw fa-user',
+                                'icon'   => 'fas fa-user-clock',
                                // 'active'  => ['admin/cursos*']
                             ],
                             [
                                 'text' => 'Grupo Estudiante',
                                 'url'  => 'grupo-estudiante',
-                                //'icon'   => 'fas fa-fw fa-user',
+                                'icon'   => 'fas fa-user-cog',
                                // 'active'  => ['admin/cursos*']
                             ],/*  [
                                 grupo-estudiante
@@ -353,7 +353,7 @@ return [
         [
             'text'        => 'Estudiantes',
             'route'         => 'admin.estudiantes.index',
-            'icon'        => 'fas fa-fw fa-user',
+            'icon'        => 'fas fa-fw fa-users',
             'active'    => ['admin/estudiantes*']
             
         ],
@@ -361,7 +361,7 @@ return [
         [
             'text'        => 'Inscripcion',
             'route'         => 'admin.inscripcions.index',
-            'icon'        => 'fas fa-fw fa-user',
+            'icon'        => 'fas fa-clipboard-list',
             'active'    => ['admin/inscripcions*']
             
         ],
@@ -378,31 +378,9 @@ return [
         ],
         
         
+          
         
         
-        
-        [
-            'text'    => 'Docentes',
-            'icon'    => 'fas fa-fw fa-user',
-            'submenu' => [
-                            [
-                            'text'   => ' Listado de Docentes',
-                            'url'  => '#',
-                           
-                            ],
-     
-                            [
-                                'text' => 'Cursos de Docentes',
-                                'url'  => '#',
-                            ],   [
-                                'text' => 'Expericencia Laboral Docente',
-                                'url'  => '#',
-                            ],   [
-                                'text' => 'Estudio Superior de Docentes',
-                                'url'  => '#',
-                            ],
-            ],
-        ],
         ['header' => 'labels'],
         [
             'text'       => 'important',

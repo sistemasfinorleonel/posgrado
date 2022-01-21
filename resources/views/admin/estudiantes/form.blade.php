@@ -4,51 +4,51 @@
 
 </div> --}}
 <div class="form-group">
-    {!! Form::label('Nregistro','Nregistro') !!}
-    {!! Form::text('Nregistro',null , ['class'=>'form-control','placeholder'=>'INGRESE EL NUMERO  DE REGISTRO']) !!}
+    {!! Form::label('Nregistro','Registro') !!}
+    {!! Form::text('Nregistro',null , ['class'=>'form-control','placeholder'=>'Ingrese su numero de registro']) !!}
     @error('Nregistro')
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>
 <div class="form-group">
-    {!! Form::label('nombre','nombre') !!}
-    {!! Form::text('nombre',null , ['class'=>'form-control','placeholder'=>'INGRESE EL NOMBRE']) !!}
+    {!! Form::label('nombre','Nombre') !!}
+    {!! Form::text('nombre',null , ['class'=>'form-control','placeholder'=>'Ingrese nombre del estudiante']) !!}
 
     @error('nombre')
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>
 <div class="form-group">
-    {!! Form::label('paterno','paterno') !!}
-    {!! Form::text('paterno',null , ['class'=>'form-control','placeholder'=>'INGRESE EL PATERNO']) !!}
+    {!! Form::label('paterno','Paterno') !!}
+    {!! Form::text('paterno',null , ['class'=>'form-control','placeholder'=>'Ingrese apellido paterno']) !!}
 @error('paterno')
 <span class="text-danger">{{$message}}</span>
 @enderror
 <div class="form-group">
-    {!! Form::label('materno','materno') !!}
-    {!! Form::text('materno',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::label('materno','Materno') !!}
+    {!! Form::text('materno',null , ['class'=>'form-control','placeholder'=>'Ingrese apellido materno']) !!}
 @error('materno')
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>
 <div class="form-group">
-    {!! Form::label('email','email') !!}
-    {!! Form::text('email',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::label('email','Email') !!}
+    {!! Form::text('email',null , ['class'=>'form-control','placeholder'=>'Ingrese correo electronico del estudiante']) !!}
 @error('email')
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>
 
 <div class="form-group">
-    {!! Form::label('telefono','telefono') !!}
-    {!! Form::number('telefono',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::label('telefono','Telefono') !!}
+    {!! Form::number('telefono',null , ['class'=>'form-control','placeholder'=>'Ingrese numero de telefono']) !!}
 @error('telefono')
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>
 <div class="form-group">
-    {!! Form::label('direccion','direccion') !!}
-    {!! Form::text('direccion',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::label('direccion','Direccion') !!}
+    {!! Form::text('direccion',null , ['class'=>'form-control','placeholder'=>'Ingrese la direccion del estudiante']) !!}
 @error('direccion')
 <span class="text-danger">{{$message}}</span>
 @enderror

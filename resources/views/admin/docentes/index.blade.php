@@ -11,19 +11,20 @@
 <div class="card">
     <div class="card-body">
            <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('admin.docentes.create')}}"> agregar docente</a>            
+               <a class ="btn btn-success"href="{{route('admin.docentes.create')}}"> Agregar docente</a>            
             </div> 
             <div class="card-body">  
                 <table id ="docente"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
-                            <th>id</th>
-                            <th>ci</th>
-                            <th>nombre completo</th>            
-                            <th>telefono</th>            
-                             <th>email</th>              
-                            <th>Fecha de Nacimiento</th>     
+                            <th>Id</th>
+                            <th>Carnet</th>
+                            <th>Nombre completo</th>            
+                            <th>Telefono</th>            
+                             <th>Email</th>              
+                            <th>Fecha de Nacimiento</th>
+                            
                             
                              
                           {{--   <th>usuario</th>    --}}
@@ -48,21 +49,21 @@
                                    {{--  <td>{{$docente->user->name}}</td> --}}
                                      
                                     <td>
-                                        <a class ="btn btn-primary btn-sm"href="{{route('admin.docentes.edit',$docente)}}">editar</a>
+                                        <a class ="btn btn-primary btn-sm"href="{{route('admin.docentes.edit',$docente)}}">Editar</a>
                                     </td>  
                                     <td>
                            {{--              <a class ="btn btn-primary btn-sm" href="{{asset('admin/docentes')}}/{{$docente}}">
                                             Mas informacion
                                         </a> --}}
-                                        <a class ="btn btn-primary btn-sm" href="{{route('admin.docentes.show',$docente)}}">
-                                            Mas informacion
+                                        <a class ="btn btn-warning btn-sm" href="{{route('admin.docentes.show',$docente)}}">
+                                            Mostrar
                                         </a>
                                     </td>
                                     <td >
                                         <form action="{{route('admin.docentes.destroy',$docente)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
                                         </form>
                                     </td> 
                                                    

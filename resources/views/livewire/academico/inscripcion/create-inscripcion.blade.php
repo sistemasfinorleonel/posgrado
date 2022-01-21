@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col">    
                 <div class="card-header">
-                    <label for="">BUSCAR EL NOMBRE DEL PROGRAMA</label>
+                    <label for="">Buscar por nombre de programa</label>
                     <input wire:keydown="limpiar_page" wire:model ="search"class="form-control" placeholder="Escriba un nombre Programa ..">
                     <br>
                     @if ($search)
@@ -30,7 +30,7 @@
         </div>
     <div class="col">    
                 <div class="card-header">
-                    <label for="">Buscar por  Numero de Reguistro</label>
+                    <label for="">Buscar por  número de Registro</label>
                     <input wire:keydown="limpiar_page" wire:model ="searchestudiante"class="form-control" placeholder="Escriba un nombre Programa ..">
                     <br>
                     @if ($searchestudiante)
@@ -53,7 +53,7 @@
                 </div>    
     </div>
     </div>
-                {!! Form::submit('CREAR NUEVO REGISTRO', ['class'=>'btn btn-primary'])  !!}
+                {!! Form::submit('Realizar inscripcón', ['class'=>'btn btn-primary'])  !!}
            {!! Form::close() !!}
         </div> 
 

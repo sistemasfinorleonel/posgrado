@@ -8,14 +8,14 @@
          <div class="card-body">
              <table class="table table-striped">
                  <thead>
-                     <tr>
-                         <th>ID</th>
-                         <th>EMPRESA</th>
-                         <th>CARGO</th>
-                         <th>FECHA INICIO</th>
-                         <th>FECHA FIN</th>
-                         <th>NOMBRE COMPLETO DOCENTE</th>
-                         <th>CORREO</th>
+                     <tr >
+                         <th>Id</th>
+                         <th>Empresa</th>
+                         <th>Cargo</th>
+                         <th>Fecha inicio</th>
+                         <th>Fecha fín</th>
+                         {{-- <th>Nombre completo del docente</th>
+                         <th>Email</th> --}}
                      </tr>
                  </thead>
                  <tbody>
@@ -37,7 +37,7 @@
                                 <form action="{{route('admin.experiencias.destroy',$experiencia)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                    <button class="btn btn-danger " type="submit">Eliminar</button>
                                     </form>
                             </td>
                          </tr>

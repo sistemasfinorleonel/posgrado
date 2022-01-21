@@ -7,7 +7,7 @@
                 </span>
             @enderror
     </div>
-     <strong> LISTA DE PERMISOS</strong>
+     <strong class="my-12"> LISTA DE PERMISOS</strong>
     
      @error('permissions')
         <small class="text-danger">

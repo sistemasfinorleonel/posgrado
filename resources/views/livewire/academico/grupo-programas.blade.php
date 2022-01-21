@@ -35,7 +35,7 @@
                             <form action="{{route('admin.grupos.destroy',$grupo)}}" method="post">
                                 @csrf
                                 @method('delete')
-                                <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                <button class="btn btn-danger " type="submit">Eliminar</button>
                                 </form>
                         </td>
                      </tr>

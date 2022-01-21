@@ -17,7 +17,7 @@
 <div class="card">
    
     <div class="card-header">
-         <a class="btn btn-secondary" href="{{route('admin.roles.create')}}">crear</a>
+         <a class="btn btn-success" href="{{route('admin.roles.create')}}">Crear</a>
     </div>
      
    
@@ -37,7 +37,7 @@
                         <td>{{$role->id}}</td>
                         <td>{{$role->name}}</td>
                         <td>
-                            <a class="btn btn-secondary" href="{{route('admin.roles.edit',$role)}}">Edit</a>
+                            <a class="btn btn-primary" href="{{route('admin.roles.edit',$role)}}">Editar</a>
                         </td>
                         <td>
                             <form action="{{route('admin.roles.destroy',$role)}}" method="POST">

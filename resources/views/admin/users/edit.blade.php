@@ -3,7 +3,7 @@
 @section('title', 'PostGrado')
 
 @section('content_header')
-    <h1>edit usuario</h1>
+    <h1>Editar usuario</h1>
 @stop
 
 @section('content')
@@ -11,7 +11,7 @@
         <div class="card-body">
             <h1 class="h5">Nombre</h1>
             <p class="form-control">{{$user->name}}</p>
-            <h1 class="h5">lista de roles</h1> 
+            <h1 class="h5">Lista de roles disponibles</h1> 
             {!! Form::model($user, ['route'=>['admin.users.update',$user],'method'=>'put']) !!}
             @foreach ($roles as $role)
             <div>

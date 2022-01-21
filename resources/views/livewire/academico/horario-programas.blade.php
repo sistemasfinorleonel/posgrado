@@ -9,10 +9,10 @@
              <table class="table table-striped">
                  <thead>
                      <tr>
-                         <th>ID</th>
-                         <th>DIA</th>
-                         <th>HORA ENTRADA</th>
-                         <th>HORA SALIDA</th>
+                         <th>Id</th>
+                         <th>Día</th>
+                         <th>Hora de entrada</th>
+                         <th>Hora de salida</th>
                      </tr>
                  </thead>
                  <tbody>
@@ -31,7 +31,7 @@
                                 <form action="{{route('admin.horarios.destroy',$horario)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                    <button class="btn btn-danger " type="submit">Eiminar</button>
                                     </form>
                             </td>
                          </tr>
