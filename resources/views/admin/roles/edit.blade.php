@@ -3,7 +3,7 @@
 @section('title', 'PostGrado')
 
 @section('content_header')
-    <h1>edit</h1>
+    <h1>Asignar roles</h1>
 @stop
 
 @section('content')

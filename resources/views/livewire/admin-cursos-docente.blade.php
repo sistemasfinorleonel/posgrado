@@ -8,13 +8,14 @@
          <div class="card-body">
              <table class="table table-striped">
                  <thead>
-                     <tr>
-                         <th>ID</th>
-                         <th>NOMBRE</th>
-                         <th>INSTITUCION</th>
-                         <th>AÑO</th>
-                         <th>NOMBRE COMPLETO DOCENTE</th>
-                         <th>CORREO</th>
+                     <tr class="text-center">
+                         <th>Id</th>
+                         <th>Nombre</th>
+                         <th>Institución</th>
+                         <th>Gestión</th>
+                         <th>Nombre completo del docente</th>
+                         <th>Email</th>
+                         <th>Acción</th>
                      </tr>
                  </thead>
                  <tbody>
@@ -35,7 +36,7 @@
                                 <form action="{{route('admin.cursos.destroy',$curso)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                    <button class="btn btn-danger" type="submit">Eliminar</button>
                                     </form>
                             </td>
                          </tr>

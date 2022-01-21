@@ -3,7 +3,7 @@
 @section('title', 'PostGrado')
 
 @section('content_header')
-    <h1>crear</h1>
+    <h1>Crear</h1>
 @stop
 
 @section('content')

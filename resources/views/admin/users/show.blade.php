@@ -3,11 +3,11 @@
 @section('title', 'PostGrado')
 
 @section('content_header')
-    <h1>Postgrado</h1>
+    <h1>Lista de usuarios</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>Bienvenido a la unidad de postgrado</p>
 @stop
 
 @section('css')

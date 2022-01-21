@@ -12,7 +12,7 @@
         
         @include('admin.docentes.form')
         
-            {!! Form::submit('actualizar tipo de docentes', ['class'=>'btn btn-primary'])  !!}
+            {!! Form::submit('actualizar datos de docentes', ['class'=>'btn btn-primary'])  !!}
         {!! Form::close() !!}
     
         

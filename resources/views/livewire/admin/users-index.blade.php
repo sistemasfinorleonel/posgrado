@@ -10,9 +10,9 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>NOMBRE</th>
-                    <th>EMAIL</th>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
                     <th></th>
                     <th></th>
                 </tr>

@@ -38,8 +38,8 @@
                                         <td>{{$grupo_horario->dia}} - {{$grupo_horario->horaEntrada}} &nbsp; {{$grupo_horario->horaSalida}}</td>
                                         <td>{{programa_modulo(grupo($grupo_horario->grupo_id)->programa_modulo_id)->edicion}} </td>    
                                         <td>
-                                            <button class="btn btn-success" wire:click="show_form_update({{$grupo_horario->id}})">Editar</button>
-                                            <button class="btn btn-danger" wire:click="delete_grupo_horario({{$grupo_horario->id}})">Eliminar</button>
+                                            <button class="btn btn-success btn-sm" wire:click="show_form_update({{$grupo_horario->id}})">Editar</button>
+                                            <button class="btn btn-danger btn-sm" wire:click="delete_grupo_horario({{$grupo_horario->id}})">Eliminar</button>
                                         </td>
                                     </tr>
                                 @endforeach

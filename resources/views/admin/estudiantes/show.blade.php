@@ -3,7 +3,7 @@
 
 @section('title', 'Dashboard')
 @section('content_header')
-    <h1>Datos personales<a class ="btn btn-primary btn-sm"href="{{route('admin.estudiantes.edit',$estudiante)}}">editar</a>
+    <h1>Datos personales<a class ="btn btn-primary btn-sm"href="{{route('admin.estudiantes.edit',$estudiante)}}">Editar</a>
     </h1>       
 
 @stop

@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>CREAR</h1>
+    <h1>Añadir Estudiante</h1>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
         {!! Form::open(['route' => 'admin.estudiantes.store']) !!}
          @include('admin.estudiantes.form')
             
-           {!! Form::submit('CREAR NUEVO REGISTRO', ['class'=>'btn btn-primary'])  !!}
+           {!! Form::submit('Agregar registro', ['class'=>'btn btn-success'])  !!}
         {!! Form::close() !!}
     </div>
 </div> 

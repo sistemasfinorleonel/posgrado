@@ -8,7 +8,7 @@
 <div class="card">
     <div class="card-body">
       
-        {!! Form::model($docente,['route' => ['admin.estudiantes.update',$docente],'method'=>'put']) !!}
+        {!! Form::model($estudiante,['route' => ['admin.estudiantes.update',$estudiante],'method'=>'put']) !!}
         
         @include('admin.estudiantes.form')
         

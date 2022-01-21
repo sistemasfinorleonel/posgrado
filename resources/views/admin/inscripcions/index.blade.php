@@ -11,17 +11,17 @@
 <div class="card">
     <div class="card-body"> 
            <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('admin.inscripcions.create')}}"> agregar inscripcion</a>            
+               <a class ="btn btn-primary"href="{{route('admin.inscripcions.create')}}"> Realizar inscripción</a>            
             </div> 
             <div class="card-body">  
                 <table id ="inscripcion"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
-                            <th>N Registro</th>
+                            <th>Registro</th>
                             <th>Nombre completo </th>
                             <th>Programa</th>            
-                            <th>tipo de programa</th>                         
+                            <th>Tipo de programa</th>                         
                             <th ></th>
                             <th ></th>
                             <th ></th>
