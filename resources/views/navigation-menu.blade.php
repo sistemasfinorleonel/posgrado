@@ -8,7 +8,6 @@
             'name'=>'Programas',
             'route'=>route('programas.index'),
             'active' => request()->routeIs('programas.*'),
-
         ]
     ];
 @endphp

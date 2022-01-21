@@ -26,3 +26,4 @@ Route::resource('estudiantes',EstudianteController::class)->names('estudiantes')
 Route::resource('horarios',HorarioController::class)->names('horarios');
 Route::resource('grupos',GrupoController::class)->names('grupos');
 Route::resource('inscripcions',InscripcionController::class)->names('inscripcions');
+

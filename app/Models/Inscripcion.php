@@ -9,6 +9,4 @@ class Inscripcion extends Model
 {
     use HasFactory;
     protected $fillable = ['id'];
-
-
 }

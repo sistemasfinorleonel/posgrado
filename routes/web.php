@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\GrupoEstudianteController;
+use App\Http\Controllers\GrupoHorarioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProgramaController;
+use App\Http\Controllers\ProgramaModulocontroller;
 use App\Models\Programa;
 
 /*
@@ -25,3 +28,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('programas',[ProgramaController::class,'index'])->name('programas.index');
 
 Route::get('programas/{programa}', [ProgramaController::class, 'show'])->name('programas.show');
+
+
+Route::get('programa-modulo',[ProgramaModulocontroller::class,'mostrar']);
+Route::get('grupo-horario',[GrupoHorarioController::class,'mostrar']);
+Route::get('grupo-estudiante',[GrupoEstudianteController::class,'mostrar']);
+
