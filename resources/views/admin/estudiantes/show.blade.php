@@ -20,7 +20,7 @@
            --}}  <div><strong>Nombre:</strong><p>{{$estudiante->nombre}}</p></div>
             <div><strong>Apellido Paterno:</strong><p>{{$estudiante->paterno}}</p></div>
             <div><strong>Apellido Materno:</strong><p>{{$estudiante->materno}}</p></div>
-            <div><strong>Correo:</strong><p>{{$estudiante->mail}}</p></div>
+            <div><strong>Correo:</strong><p>{{$estudiante->email}}</p></div>
             <div><strong>Telefono:</strong><p>{{$estudiante->telefono}}</p></div>
             <div><strong>Direccion:</strong><p>{{$estudiante->direccion}}</p></div>
          
