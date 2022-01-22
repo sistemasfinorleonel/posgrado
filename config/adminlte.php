@@ -335,7 +335,14 @@ return [
                                 'url'  => 'grupo-estudiante',
                                 'icon'   => 'fas fa-user-cog',
                                // 'active'  => ['admin/cursos*']
+                            ],
+                            [
+                                'text' => 'Modulos',
+                                'route'  => 'admin.modulos.index',
+                                'icon'   => 'fas fa-user-cog',
+                               // 'active'  => ['admin/cursos*']
                             ],/*  [
+                              /*  [
                                 grupo-estudiante
                                 'text' => 'Expericencia Laboral Docente',
                                 'route'  => 'admin.experiencias.index',
