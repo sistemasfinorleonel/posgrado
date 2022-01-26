@@ -343,7 +343,7 @@ return [
                                // 'active'  => ['admin/cursos*']
                             ],/*  [
                               /*  [
-                                grupo-estudiante
+                                grupo-phpestudiante
                                 'text' => 'Expericencia Laboral Docente',
                                 'route'  => 'admin.experiencias.index',
                                 //'icon'   => 'fas fa-fw fa-user',

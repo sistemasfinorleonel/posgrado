@@ -15,6 +15,8 @@ class CreateGruposTable extends Migration
     {
         Schema::create('grupos', function (Blueprint $table) {
             $table->id();
+            $table->date('fecha_ini')->nullable();
+            $table->date('fecha_fin')->nullable();
             $table->unsignedBigInteger('docente_id');
             $table->unsignedBigInteger('programa_modulo_id')->constrained();
             $table->foreign('programa_modulo_id')->references('id')->on('programa_modulos')->onDelete('cascade');

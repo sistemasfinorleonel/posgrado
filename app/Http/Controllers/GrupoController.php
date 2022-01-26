@@ -15,6 +15,9 @@ class GrupoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function mostrar(){
+        return view('admin.grup.index');
+    } 
     public function index()
     {
         $grupos=TipoPrograma::join('programas','tipo_programas.id','=','programas.id')

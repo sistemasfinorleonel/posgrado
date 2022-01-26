@@ -18,25 +18,32 @@
                     <thead>
                         <tr>
                         
+                            <th>#ID</th>
+                            <th>#</th>
                             <th>Registro</th>
                             <th>Nombre completo </th>
                             <th>Programa</th>            
                             <th>Tipo de programa</th>                         
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
+                            <th>
+
+                            </th>
                         </tr>
                     </thead>
                     
                     <tbody>
                         @foreach ($listaincripcions as $inscripcion)
                             <tr>
-                                <td> {{$inscripcion->Nregistro}}</td>
-                                <td> {{$inscripcion->nombre_estudiante}} {{$inscripcion->paterno}}</td>
-                                <td>{{$inscripcion->nombre_programa}}</td>
+                                
+                                <td>{{$inscripcion->inscripcion_id}}</td>
+                                <td>{{$inscripcion->estudiante_id}}</td>
+                                <td>{{$inscripcion->Nregistro}}</td>
+                                <td>{{$inscripcion->nombre_estudiante}} {{$inscripcion->paterno}}</td>
+                                <td>{{$inscripcion->nombre_programa}}</td>\
                                 <td>{{$inscripcion->nombre_tipo}}</td>
                                 <td>
-                                    
+                                    <a href="{{ route('pdfAvance', ['inscripcion'=>$inscripcion->inscripcion_id]) }}" class="btn btn-sm btn-warning">
+                                        PDF
+                                    </a>
                                 </td>
                           
                                                    

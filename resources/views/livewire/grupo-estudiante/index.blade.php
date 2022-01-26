@@ -136,45 +136,76 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-4">
+                        {{--<div class="col-4">
                             <div class="mb-3">
                                 <label for="" class="form-label">Nota</label>
-                                <input wire:model='nota' type="number" name="" id="" class="form-control"
+                                <input wire:model='nota' type="number" name="" placeholder="Nota" id="" class="form-control"
                                     placeholder="" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"></small>
                             </div>
-                        </div>
-                        <div class="col-4">
+                        </div>--}}
+
+                        <div class="col-12">
                             <div class="mb-3" wire:ignore>
-                                <label for="" class="form-label">Grupo</label>
-                                <select name="" class="form-control" id="" wire:model='grupo_id'>
-                                    @if (is_null($grupo_id))
-                                        <option value="">Seleccione un grupo</option>
-                                    @endif
-                                    @foreach (grupos() as $grupo)
-                                        <option value="{{ $grupo->id }}">{{ $grupo->id }} </option>
-                                    @endforeach
-                                </select>
-                                <small id="helpId" class="text-muted"></small>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="mb-3" wire:ignore>
-                                <label for="" class="form-label">Estudiante</label>
                                 <select name="" id="" class="form-control" wire:model='estudiante_id'>
                                     @if (is_null($estudiante_id))
-                                        <option value="">Seleccione un horario</option>
+                                        <option value="">Seleccione un Estudiante</option>
                                     @endif
-                                    @foreach (estudiantes() as $estudiante)
+                                    @foreach (estudiantes_inscritos() as $estudiante)
                                         <option value="{{ $estudiante->id }}">
-                                            {{ $estudiante->nombre }} {{ $estudiante->paterno }}
-                                            {{ $estudiante->materno }}
+                                            {{ estudiante($estudiante->id)->nombre }} {{ estudiante($estudiante->id)->paterno }}
+                                            {{ estudiante($estudiante->id)->materno }}
                                         </option>
                                     @endforeach
                                 </select>
                                 <small id="helpId" class="text-muted"></small>
                             </div>
                         </div>
+
+                        @if ($estudiante_id)
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <select name="" class="form-control" id="" wire:model='programa_id'>
+                                        @if (is_null($programa_id))
+                                            <option value="">Seleccione un programa</option>
+                                        @endif
+                                        @foreach (programa_estudiante($estudiante_id) as $programa)
+                                            <option value="{{ $programa->programa_id }}">{{ programa($programa->programa_id)->nombre }} </option>
+                                        @endforeach
+                                    </select>
+                                    <small id="helpId" class="text-muted"></small>
+                                </div>
+                            </div>
+
+                            @if ($programa_id)
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <select name="" class="form-control" id="" wire:model='grupo_id'>
+                                            @if (is_null($grupo_id))
+                                                <option value="">Seleccione un grupo</option>
+                                            @endif
+                                            @foreach (grupos_programa($programa_id) as $grupo)
+                                                <option value="{{ $grupo->id }}">{{ $grupo->id }} </option>
+                                            @endforeach
+                                        </select>
+                                        <small id="helpId" class="text-muted"></small>
+                                    </div>
+                                </div>
+                            @else
+                                <div class="col-12">
+                                    <div class="alert alert-info" role="alert">
+                                        Seleccione un grupo
+                                    </div>
+                                </div>
+                            @endif
+                        @else
+                            <div class="col-12">
+                                <div class="alert alert-info" role="alert">
+                                    <strong>Seleccion un estudiante</strong>
+                                </div>
+                            </div>
+                        @endif
+
                     </div>
 
                     <div class="row m-3">
@@ -189,10 +220,11 @@
                                     <th>Grupo</th>
                                     <th>Docente</th>
                                     <th>Modulo</th>
+                                    <th>Programa</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if ($count > 0)
+                                @if (count($array_grupo) > 0)
                                     @for ($i = 0; $i < $count; $i++)
                                         <tr>
                                             <td scope="row">
@@ -208,6 +240,9 @@
                                             </td>
                                             <td>
                                                 {{ modulo(programa_modulo(grupo($array_grupo[$i]['grupo_id'])->programa_modulo_id)->modulo_id)->nombre }}
+                                            </td>
+                                            <td>
+                                                {{ programa(programa_modulo(grupo($array_grupo[$i]['grupo_id'])->programa_modulo_id)->modulo_id)->nombre }}
                                             </td>
                                         </tr>
                                     @endfor

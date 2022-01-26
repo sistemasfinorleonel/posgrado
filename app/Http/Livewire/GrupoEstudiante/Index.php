@@ -24,6 +24,9 @@ class Index extends Component
     public $new_nota;
     public $new_grupo_id;
 
+
+    public $programa_id;
+
     public $data;
     public function render()
     {
@@ -36,6 +39,10 @@ class Index extends Component
     public function show_form_add(){
         $this->table = false;
         $this->isEdit = false;
+    }
+
+    public function limpiar_page(){
+        $this->reset('page');
     }
 
     public function close_form_add(){

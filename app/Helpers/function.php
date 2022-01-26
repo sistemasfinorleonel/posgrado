@@ -6,6 +6,7 @@ use App\Models\Grupo;
 use App\Models\GrupoEstudiante;
 use App\Models\GrupoHorario;
 use App\Models\Horario;
+use App\Models\Inscripcion;
 use App\Models\Modulo;
 use App\Models\Programa;
 use App\Models\ProgramaModulo;
@@ -19,6 +20,11 @@ function programas_modulos($search){
     ->orWhere('modulos.nombre','LIKE','%'.$search.'%')
     ->paginate(10);
 }
+
+function programa_modulos(){
+    return ProgramaModulo::all();
+}
+
 function programa($id){
     return Programa::findOrFail($id);
 }
@@ -35,6 +41,9 @@ function grupo($id){
 
 function docente($id){
     return Docente::findOrFail($id);
+}
+function docentes(){
+    return Docente::all();
 }
 function estudiante($id){
     return Estudiante::findOrFail($id);
@@ -151,6 +160,50 @@ function update_grupo_horario($id,$aula,$grupo_id,$horario_id){
 
 
 
+
+
+
+function save_grupo($fecha_ini,$fecha_fin,$docente_id,$programa_modulo_id){
+    $grupo =  new Grupo();
+    $grupo->fecha_ini = $fecha_ini;
+    $grupo->fecha_fin = $fecha_fin;
+    $grupo->docente_id = $docente_id;
+    $grupo->programa_modulo_id = $programa_modulo_id;
+    $grupo->save();
+}
+
+function update_grupo($id,$fecha_ini,$fecha_fin,$docente_id,$programa_modulo_id){
+    $grupo = Grupo::findOrFail($id);
+    $grupo->fecha_ini = $fecha_ini;
+    $grupo->fecha_fin = $fecha_fin;
+    $grupo->docente_id = $docente_id;
+    $grupo->programa_modulo_id = $programa_modulo_id;
+    $grupo->update();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function grupos_estudiantes($search=''){
     return GrupoEstudiante::
     select(
@@ -170,6 +223,25 @@ function grupos_estudiantes($search=''){
     ->where('estudiantes.Nregistro','LIKE','%'.$search.'%')
     ->paginate(10);
 }
+
+function estudiantes_inscritos(){
+    return Estudiante::select('estudiantes.id')
+    ->join('inscripcions','inscripcions.estudiante_id','=','estudiantes.id')
+    ->groupBy('estudiantes.id')
+    ->get();
+}
+
+function grupos_programa($programa_id){
+    return  Grupo::select('grupos.id')
+    ->join('programa_modulos','programa_modulos.id','=','grupos.programa_modulo_id')
+    ->where('programa_modulos.programa_id','=',$programa_id)
+    ->get();
+}
+
+function programa_estudiante($estudiante_id){
+     return Inscripcion::where('estudiante_id','=',$estudiante_id)->get();
+}
+
 
 
 

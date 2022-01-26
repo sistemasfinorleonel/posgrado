@@ -17,7 +17,7 @@ use App\Http\Controllers\ModuloController;
 use App\Models\EstudioSuperior;
 use App\Models\ExperienciaLaboral;
 
-Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('home');
+Route::get('', [HomeController::class, 'index'])/* ->middleware('can:Ver dashboard') */->name('home');
 Route::resource('roles',RoleController::class)->names('roles');
 Route::resource('users',UserController::class)->names('users');
 Route::resource('docentes',DocenteController::class)->names('docentes');
