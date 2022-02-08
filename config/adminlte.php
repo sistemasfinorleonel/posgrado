@@ -341,7 +341,15 @@ return [
                                 'route'  => 'admin.modulos.index',
                                 'icon'   => 'fas fa-user-cog',
                                // 'active'  => ['admin/cursos*']
-                            ],/*  [
+                            ],
+                            
+                            [
+                                'text' => 'Grupos',
+                                'url'  => 'grupos',
+                                'icon'   => 'fas fa-user-cog',
+                               // 'active'  => ['admin/cursos*']
+                            ],
+                            /*  [
                               /*  [
                                 grupo-phpestudiante
                                 'text' => 'Expericencia Laboral Docente',

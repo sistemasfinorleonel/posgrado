@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ProgramaController;
 use App\Http\Controllers\ProgramaModulocontroller;
+use App\Http\Controllers\PruebaController;
 use App\Models\GrupoHorario;
 use App\Models\Programa;
 
@@ -38,7 +39,8 @@ Route::get('grupos',[GrupoController::class,'mostrar']);
 Route::get('grupo-horario',[GrupoHorarioController::class,'mostrar']);
 Route::get('grupo-estudiante',[GrupoEstudianteController::class,'mostrar']);
 Route::get('pdfAvance/{inscripcion}',[PDFController::class,'mostrar'])->name('pdfAvance');
-
+Route::resource('prueba',PruebaController::class)->names('pruebas');
+//Route::view('prueba', 'livewire.prueba');
 
 
 Route::get('/example',function (){

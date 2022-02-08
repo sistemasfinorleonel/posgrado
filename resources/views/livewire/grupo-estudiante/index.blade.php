@@ -22,6 +22,7 @@
                                 <th>Registro</th>
                                 <th>Estudiante</th>
                                 <th>Modulo</th>
+                                <th>Programa</th>
                                 <th>Docente</th>
                                 <th>Nota</th>
                                 <th>Estado</th>
@@ -39,6 +40,8 @@
                                         {{ $grupo_estudiante->materno }}
                                     </td>
                                     <td>{{ modulo(programa_modulo($grupo_estudiante->programa_modulo_id)->modulo_id)->nombre }}
+                                    <td>{{ programa(programa_modulo($grupo_estudiante->programa_modulo_id)->programa_id)->nombre }}
+                                   
                                     </td>
                                     <td>{{ docente($grupo_estudiante->docente_id)->nombre }}</td>
                                     <td>{{ $grupo_estudiante->nota }}</td>
@@ -146,6 +149,7 @@
                         </div>--}}
 
                         <div class="col-12">
+                          
                             <div class="mb-3" wire:ignore>
                                 <select name="" id="" class="form-control" wire:model='estudiante_id'>
                                     @if (is_null($estudiante_id))
@@ -158,13 +162,32 @@
                                         </option>
                                     @endforeach
                                 </select>
+                               
                                 <small id="helpId" class="text-muted"></small>
+                            
+                               
                             </div>
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
                         </div>
-
+                       
                         @if ($estudiante_id)
+
+
                             <div class="col-12">
                                 <div class="mb-3">
+                                   
                                     <select name="" class="form-control" id="" wire:model='programa_id'>
                                         @if (is_null($programa_id))
                                             <option value="">Seleccione un programa</option>
