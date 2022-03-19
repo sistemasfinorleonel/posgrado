@@ -182,6 +182,68 @@ function update_grupo($id,$fecha_ini,$fecha_fin,$docente_id,$programa_modulo_id)
 }
 
 
+function update_estudiante($id,$Nregistro,$nombre,$paterno,$materno,$email,$telefono,$direccion)
+{$estudiante=Estudiante::findOrFail($id);
+  $estudiante->Nregistro= $Nregistro;
+  $estudiante->nombre= $nombre;
+  $estudiante->paterno= $paterno;
+  $estudiante->materno= $materno;
+  $estudiante->email= $email;
+  $estudiante->telefono= $telefono;
+  $estudiante->direccion= $direccion;
+
+  $estudiante->update(); 
+
+}
+
+
+function save_estudiante($Nregistro,$nombre,$paterno,$materno,$email,$telefono,$direccion)
+{
+    $estudiante=new Estudiante();
+    $estudiante->Nregistro= $Nregistro;
+    $estudiante->nombre= $nombre;
+    $estudiante->paterno= $paterno;
+    $estudiante->materno= $materno;
+    $estudiante->email= $email;
+    $estudiante->telefono= $telefono;
+    $estudiante->direccion= $direccion;
+  
+    $estudiante->save(); 
+}
+function update_docente($id,$ci,$nombre,$paterno,$materno,$telefono,$direccion,$email,$fecha_nacimiento,$lugar_nacimiento)
+{$docente=Docente::findOrFail($id);
+  $docente->ci= $ci;
+  $docente->nombre= $nombre;
+  $docente->paterno= $paterno;
+  $docente->materno= $materno;
+  $docente->telefono= $telefono;
+  $docente->direccion= $direccion;
+  $docente->email= $email;
+  $docente->fecha_nacimiento= $fecha_nacimiento;
+  $docente->lugar_nacimiento= $lugar_nacimiento;
+
+  $docente->update(); 
+
+}
+
+
+function save_docente($ci,$nombre,$paterno,$materno,$telefono,$direccion,$email,$fecha_nacimiento,$lugar_nacimiento)
+{
+  $docente=new Docente();
+  $docente->ci= $ci;
+  $docente->nombre= $nombre;
+  $docente->paterno= $paterno;
+  $docente->materno= $materno;
+  $docente->telefono= $telefono;
+  $docente->direccion= $direccion;
+  $docente->email= $email;
+  $docente->fecha_nacimiento= $fecha_nacimiento;
+  $docente->lugar_nacimiento= $lugar_nacimiento;
+
+  $docente->save(); 
+}
+
+
 
 
 

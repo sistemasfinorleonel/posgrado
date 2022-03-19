@@ -20,13 +20,15 @@ use App\Models\ExperienciaLaboral;
 Route::get('', [HomeController::class, 'index'])/* ->middleware('can:Ver dashboard') */->name('home');
 Route::resource('roles',RoleController::class)->names('roles');
 Route::resource('users',UserController::class)->names('users');
-Route::resource('docentes',DocenteController::class)->names('docentes');
+
+Route::get('docentes',[DocenteController::class,'mostrar'])->name('docentes.mostrar');
 Route::resource('cursos',CursoController::class)->names('cursos');
 Route::resource('experiencias',ExperiencialaboralController::class)->names('experiencias');
 Route::resource('estudios',EstudiosuperiorController::class)->names('estudios');
-Route::resource('estudiantes',EstudianteController::class)->names('estudiantes');
+
+Route::get('estudiantes',[EstudianteController::class,'mostrar'])->name('estudiantes.mostrar');
 Route::resource('horarios',HorarioController::class)->names('horarios');
 Route::resource('grupos',GrupoController::class)->names('grupos');
-Route::resource('modulos',ModuloController::class)->names('modulos');
+Route::get('modulos',[ModuloController::class,'mostrar'])->name('modulos.mostrar');
 Route::resource('inscripcions',InscripcionController::class)->names('inscripcions');
 

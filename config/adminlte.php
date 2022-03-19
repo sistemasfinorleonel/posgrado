@@ -280,7 +280,7 @@ return [
             'submenu' => [
                             [
                             'text'   => ' Listado de Docentes',
-                            'route'  => 'admin.docentes.index',
+                            'route'  => 'admin.docentes.mostrar',
                             'icon'   => 'fas fa-fw fa-user',
                             'active'  => ['admin/docentes*']
                             ],
@@ -338,7 +338,7 @@ return [
                             ],
                             [
                                 'text' => 'Modulos',
-                                'route'  => 'admin.modulos.index',
+                                'route'  => 'admin.modulos.mostrar',
                                 'icon'   => 'fas fa-user-cog',
                                // 'active'  => ['admin/cursos*']
                             ],
@@ -367,7 +367,7 @@ return [
 
         [
             'text'        => 'Estudiantes',
-            'route'         => 'admin.estudiantes.index',
+            'route'         => 'admin.estudiantes.mostrar',
             'icon'        => 'fas fa-fw fa-users',
             'active'    => ['admin/estudiantes*']
             
